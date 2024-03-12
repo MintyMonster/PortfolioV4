@@ -1,0 +1,66 @@
+$background-color: #121212;
+$highlight-color: #c992f1;
+$secondary-color: white;
+$tertiary-color: #b8b7b8;
+
+$primary-font: "Montserrat", sans-serif;
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 150px;
+    //border: 1px solid white;
+    width: 1600px;
+    height: 600px;
+    transform: skew(5deg);
+
+    /*
+    .options-games {
+        background: url("https://user-images.githubusercontent.com/78669960/216851027-96166921-e206-4288-ad82-8463027bb45c.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    */
+
+
+    .options-card {
+        background-color: pink;
+
+        flex: 1;
+        transition: all 300ms ease-in-out;
+        min-height: 400px;
+        position: relative;
+        margin: 30px;
+        filter: grayscale(100%);
+        box-shadow: 10px 5px 5px black;
+
+        .options-header {
+
+            //background-color: $background-color;
+
+            color: $tertiary-color;
+            font-weight: 400;
+            transition: all 300ms ease-in-out;
+            min-width: 100%;
+            padding: 0.1em;
+            text-align: left;
+            top: 0;
+            left: 0;
+            font-size: 25px;
+            white-space: nowrap;
+            font-family: $primary-font;
+            transform: rotate(90deg);
+            transform-origin: top left;
+        }
+
+        &:hover {
+            filter: grayscale(0);
+            cursor: pointer;
+            transform: scale(1.1);
+            z-index: 2;
+        }
+    }
+}
