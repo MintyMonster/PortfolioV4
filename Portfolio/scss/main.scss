@@ -23,7 +23,7 @@ body {
     height: 100vh;
     position: absolute;
     background-color: $background-color;
-    z-index: 1;
+    z-index: 3;
     top: 0;
 
     align-items: center;
@@ -59,6 +59,42 @@ body {
 }
 
 
+.socials-container {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    .navbar-socials {
+        font-family: $primary-font;
+        font-weight: 200;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        color: $tertiary-color;
+        justify-content: start;
+        font-size: 15px;
+
+        & a {
+            color: $tertiary-color;
+            font-size: 1.5em;
+            transition: all 200ms ease;
+            text-decoration: none;
+            display: flex;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.15);
+                color: $highlight-color;
+            }
+        }
+    }
+}
+
 .navbar-container {
     position: fixed;
     display: flex;
@@ -77,6 +113,7 @@ body {
         gap: 5em;
         transition: all 300ms ease;
         margin: 0px 40px 0px 0px;
+        font-size: 20px;
 
         .navbar-link {
 
