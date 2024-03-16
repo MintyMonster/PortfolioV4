@@ -6,7 +6,10 @@ $(document).ready(function () {
             $(".software-slide-container").removeClass("show-container").addClass("hide-container");
             $(".website-slide-container").removeClass("show-container").addClass("hide-container");
             $(".games-slide-container").removeClass("hide-container").addClass("show-container");
-            
+
+            $(".slide-option-container-games").removeClass("hide-container").addClass("show-container");
+            $(".slide-option-container-website").removeClass("show-container").addClass("hide-container");
+            $(".slide-option-container-software").removeClass("show-container").addClass("hide-container");
         }
     });
 
@@ -17,6 +20,9 @@ $(document).ready(function () {
             $(".games-slide-container").removeClass("show-container").addClass("hide-container");
             $(".website-slide-container").removeClass("hide-container").addClass("show-container");
             
+            $(".slide-option-container-website").removeClass("hide-container").addClass("show-container");
+            $(".slide-option-container-games").removeClass("show-container").addClass("hide-container");
+            $(".slide-option-container-software").removeClass("show-container").addClass("hide-container");
         }
     });
 
@@ -27,6 +33,10 @@ $(document).ready(function () {
             $(".games-slide-container").removeClass("show-container").addClass("hide-container");
             $(".software-slide-container").removeClass("hide-container").addClass("show-container");
   
+            
+            $(".slide-option-container-software").removeClass("hide-container").addClass("show-container");
+            $(".slide-option-container-games").removeClass("show-container").addClass("hide-container");
+            $(".slide-option-container-website").removeClass("show-container").addClass("hide-container");
         }
     });
 

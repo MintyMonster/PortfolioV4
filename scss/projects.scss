@@ -81,65 +81,182 @@ $primary-font: "Montserrat", sans-serif;
     }
 }
 
-.games-slide-container {
+.slide-container {
     position: absolute;
     display: flex;
     //border: 1px solid white;
-    width: 82vw;
-    height: 91vh;
-    margin-top: 9vh;
-    top: 0;
+    height: 92vh;
+    margin-top: 85px;
+    bottom: 0;
     right: 0;
     border-radius: 25px 0 0 25px;
-    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear;
+    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear, width 200ms linear;
 
+    .slide-text-container {
+        position: absolute;
+        color: $tertiary-color;
+        font-family: $primary-font;
+        font-weight: 300;
+        top: 0;
+        left: 0;
+        margin-left: 150px;
+        margin-top: 50px;
+        width: inherit;
+        transition: opacity 300ms ease-in-out;
+
+        .slide-text-row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 3em;
+            justify-content: center;
+
+
+            .slide-github-container {
+                width: inherit;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .slide-text-github-link {
+                    text-decoration: none;
+                    color: $tertiary-color;
+                    font-size: 40px;
+                    transition: transform 100ms linear;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .slide-text-header {
+                font-size: 50px;
+            }
+
+            .slide-text-text {
+                font-size: 25px;
+            }
+
+            .slide-text-container-image {
+                border: 1px solid white;
+                width: 400px;
+                height: 600px;
+                float: right;
+                margin-right: 200px;
+                border-radius: 25px;
+
+                // Change when editing all images
+                background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png");
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+
+    .slide-option-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 78vw;
+        height: 15vh;
+        bottom: 0;
+        right: 0;
+        gap: 1.5em;
+        list-style: none;
+        transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear, width 200ms linear;
+
+        .slide-option {
+            width: 300px;
+            height: 150px;
+            border: 1px solid white;
+            border-radius: 25px;
+            transition: all 200ms ease-in-out;
+            overflow: hidden;
+            
+            // Change to different options eventually
+            background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png");
+            background-position: center;
+            background-size: cover;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+
+                .slide-option-over {
+                    opacity: 1;
+
+                    .slide-option-text {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .slide-option-over {
+                width: inherit;
+                height: inherit;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 25px;
+                opacity: 0;
+                transition: opacity 250ms linear;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .slide-option-text {
+                    color: $tertiary-color;
+                    font-family: $primary-font;
+                    font-weight: 300;
+                    font-size: 25px;
+                    opacity: 0;
+                    transition: opacity 400ms linear;
+                }
+            }
+        }
+    }
+}
+
+.games-slide-container {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(108,9,121,1) 25%, rgba(43,0,116,1) 75%); 
     // 2, 25, 75
 }
 
 .website-slide-container {
-    position: absolute;
-    display: flex;
-    //border: 1px solid white;
-    width: 82vw;
-    height: 91vh;
-    margin-top: 9vh;
-    top: 0;
-    right: 0;
-    border-radius: 25px 0 0 25px;
-    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear;
-
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(9,9,121,1) 25%, rgba(0,212,255,1) 75%); 
 }
 
 .software-slide-container {
-    position: absolute;
-    display: flex;
-    //border: 1px solid white;
-    width: 82vw;
-    height: 91vh;
-    margin-top: 9vh;
-    top: 0;
-    right: 0;
-    border-radius: 25px 0 0 25px;
-    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear;
-
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(2,10,139,1) 25%, rgba(208,0,208,1) 75%); 
 }
+
+// Dynamic change for sliders
 
 .show-container {
     opacity: 1;
     transform: translateX(0);
     visibility: visible !important;
-    
+    width: 82vw;
 }
 
 .hide-container {
     opacity: 0;
-    transform: translateX(200%);
+    transform: translateX(100%);
     visibility: hidden !important;
-    
+    width: 0vw;
+}
+
+// Dynamic change for text
+
+.show-text {
+    opacity: 1;
+    visibility: visible !important;
+}
+
+.hide-text {
+    opacity: 0;
+    visibility: hidden !important;
 }

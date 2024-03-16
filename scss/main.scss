@@ -8,6 +8,7 @@ $primary-font: "Montserrat", sans-serif;
 body {
     background: #121212;
     user-select: none;
+    overflow-x: hidden;
 }
 
 #progress-overlay.fade {
