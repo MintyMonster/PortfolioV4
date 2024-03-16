@@ -91,8 +91,55 @@ $primary-font: "Montserrat", sans-serif;
     top: 0;
     right: 0;
     border-radius: 25px 0 0 25px;
+    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear;
 
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0) 2%, rgba(108,9,121,1) 25%, rgba(43,0,116,1) 75%); 
+    background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(108,9,121,1) 25%, rgba(43,0,116,1) 75%); 
     // 2, 25, 75
+}
+
+.website-slide-container {
+    position: absolute;
+    display: flex;
+    //border: 1px solid white;
+    width: 82vw;
+    height: 91vh;
+    margin-top: 9vh;
+    top: 0;
+    right: 0;
+    border-radius: 25px 0 0 25px;
+    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear;
+
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(9,9,121,1) 25%, rgba(0,212,255,1) 75%); 
+}
+
+.software-slide-container {
+    position: absolute;
+    display: flex;
+    //border: 1px solid white;
+    width: 82vw;
+    height: 91vh;
+    margin-top: 9vh;
+    top: 0;
+    right: 0;
+    border-radius: 25px 0 0 25px;
+    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear;
+
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(2,10,139,1) 25%, rgba(208,0,208,1) 75%); 
+}
+
+.show-container {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible !important;
+    
+}
+
+.hide-container {
+    opacity: 0;
+    transform: translateX(200%);
+    visibility: hidden !important;
+    
 }
