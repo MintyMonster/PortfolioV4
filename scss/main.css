@@ -94,12 +94,6 @@ body {
   writing-mode: vertical-lr;
   overflow: hidden;
 }
-.socials-container .socials-list .socials-li a .socials-li-div div {
-  font-size: 0.6em !important;
-}
-.socials-container .socials-list .socials-li a .socials-li-div:hover {
-  height: 275px;
-}
 .socials-container .socials-list .socials-li a .socials-li-div:hover i {
   color: #c992f1;
 }

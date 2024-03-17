@@ -105,16 +105,8 @@ body {
                     writing-mode: vertical-lr;
                     overflow: hidden;
 
-                    div {
-                        font-size: 0.6em !important;
-                    }
-
-                    &:hover {
-                        height: 275px;
-
-                        i {
-                            color: $highlight-color;
-                        }
+                    &:hover i {
+                        color: $highlight-color;
                     }
                 }
             }
