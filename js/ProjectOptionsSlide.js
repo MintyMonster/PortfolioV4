@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
-    var hide = "hide-container";
-    var show = "show-container";
+    var hideClass = "hide-container";
+    var showClass = "show-container";
+    var selected = "selected-option";
 
     $(".games-options-list-link").click(function() {
         toggleContainers(".games-slide-container", ".slide-option-container-games");
@@ -15,15 +16,12 @@ $(document).ready(function () {
         toggleContainers(".software-slide-container", ".slide-option-container-software");
     });
 
+    $(".other-options-list-link").click(function() {
+        toggleContainers(".other-slide-container", ".slide-option-container-other");
+    })
+
     function toggleContainers(slideContainer, slideOptionContainer) {
-        var $slideContainers = $(".slide-container");
-        var $slideOptionContainers = $(".slide-option-container");
-
-        $slideContainers.removeClass(show).addClass(hide);
-        $(slideContainer).removeClass(hide).addClass(show);
-
-        $slideOptionContainers.removeClass(show).addClass(hide);
-        $(slideOptionContainer).removeClass(hide).addClass(show);
+        $(".slide-container, .slide-option-container").removeClass(showClass).addClass(hideClass);
+        $(slideContainer + ", " + slideOptionContainer).removeClass(hideClass).addClass(showClass);
     }
-
 });

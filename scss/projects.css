@@ -19,7 +19,7 @@
 }
 .options .options-list {
   list-style: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -65,19 +65,19 @@
   bottom: 0;
   right: 0;
   border-radius: 25px 0 0 25px;
-  transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear, width 200ms linear;
+  transition: all 300ms linear;
 }
 .slide-container .slide-text-container {
   position: absolute;
   color: #b8b7b8;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   top: 0;
   left: 0;
   margin-left: 150px;
   margin-top: 50px;
   width: inherit;
-  transition: opacity 300ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 .slide-container .slide-text-container .slide-text-row-container {
   display: flex;
@@ -95,10 +95,31 @@
   text-decoration: none;
   color: #b8b7b8;
   font-size: 40px;
-  transition: transform 100ms linear;
+  transition: all 100ms ease-in-out;
 }
 .slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link:hover {
   transform: scale(1.1);
+}
+.slide-container .slide-text-container .slide-text-row-container .programming-language-ul {
+  width: inherit;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  gap: 1em;
+  margin-bottom: -15px;
+  margin-top: -15px;
+}
+.slide-container .slide-text-container .slide-text-row-container .programming-language-ul .programming-language {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 30px;
+  color: #6a5acd;
 }
 .slide-container .slide-text-container .slide-text-row-container .slide-text-header {
   font-size: 50px;
@@ -113,8 +134,6 @@
   float: right;
   margin-right: 200px;
   border-radius: 25px;
-  background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png");
-  background-position: center;
   background-size: cover;
 }
 .slide-container .slide-option-container {
@@ -129,18 +148,17 @@
   right: 0;
   gap: 1.5em;
   list-style: none;
-  transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear, width 200ms linear;
+  transition: all 400ms ease-in-out;
 }
 .slide-container .slide-option-container .slide-option {
   width: 300px;
   height: 150px;
   border: 1px solid white;
   border-radius: 25px;
-  transition: all 200ms ease-in-out;
   overflow: hidden;
-  background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png");
-  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 200ms ease-in-out;
 }
 .slide-container .slide-option-container .slide-option:hover {
   cursor: pointer;
@@ -158,33 +176,34 @@
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   opacity: 0;
-  transition: opacity 250ms linear;
+  transition: all 250ms linear;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .slide-container .slide-option-container .slide-option .slide-option-over .slide-option-text {
   color: #b8b7b8;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
   font-size: 25px;
   opacity: 0;
-  transition: opacity 400ms linear;
+  transition: all 400ms linear;
 }
 
 .games-slide-container {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 0) 4%, rgb(108, 9, 121) 25%, rgb(43, 0, 116) 75%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #8e44ad);
 }
 
 .website-slide-container {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 0) 4%, rgb(9, 9, 121) 25%, rgb(0, 212, 255) 75%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #6c3483);
 }
 
 .software-slide-container {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 0) 4%, rgb(2, 10, 139) 25%, rgb(208, 0, 208) 75%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #663399);
+}
+
+.other-slide-container {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #9370DB);
 }
 
 .show-container {
@@ -209,4 +228,56 @@
 .hide-text {
   opacity: 0;
   visibility: hidden !important;
+}
+
+.slide-text-container-games-image-one {
+  background: url("https://i.ibb.co/hWZbC0R/Screenshot-2024-03-17-035803.png");
+}
+
+.slide-options-games-one {
+  background: url("https://i.ibb.co/xhV5YnB/mobcontractsinnit.png");
+  background-position: center;
+}
+
+.slide-text-container-games-image-two {
+  background: url("https://i.ibb.co/sbvb0zZ/Screenshot-2024-03-17-051931.png");
+}
+
+.slide-options-games-two {
+  background: url("https://i.ibb.co/xJCcvvp/Screenshot-2024-03-17-052445.png");
+  background-position: center;
+  background-size: contain;
+}
+
+.slide-text-container-games-image-three {
+  background: url("https://i.ibb.co/9h7FcQM/Screenshot-2024-03-17-043328.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.slide-options-games-three {
+  background: url("https://i.ibb.co/bRzCnD7/Ashby-PNG.png");
+  background-position: center;
+  background-size: 10px;
+}
+
+.slide-text-container-games-image-four {
+  background: url("https://i.ibb.co/BntfqhY/Screenshot-2024-03-17-044432.png");
+  background-position: center;
+  background-size: contain;
+}
+
+.slide-options-games-four {
+  background: url("https://i.ibb.co/8Krk2fW/Screenshot-20230205-230339.png");
+  background-position: center;
+}
+
+.slide-text-container-website-image-one {
+  background: url("https://i.ibb.co/1fZGZmY/Screenshot-2024-03-17-054130.png");
+}
+
+.slide-options-website-one {
+  background: url("https://i.ibb.co/qFwk4pz/Screenshot-2024-03-17-054036.png");
+  background-position: center;
+  background-size: cover;
 }/*# sourceMappingURL=projects.css.map */

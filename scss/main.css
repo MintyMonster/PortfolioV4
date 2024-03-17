@@ -4,6 +4,7 @@ body {
      -moz-user-select: none;
           user-select: none;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #progress-overlay.fade {
@@ -69,30 +70,13 @@ body {
   float: left;
 }
 .socials-container .socials-list {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   list-style: none;
   display: flex;
   flex-direction: row;
   gap: 1em;
   transition: all 300ms ease;
-}
-.socials-container .socials-list .socials-li {
-  /*
-  & a {
-      color: $tertiary-color;
-      font-size: 1.5em;
-      transition: all 200ms ease;
-      text-decoration: none;
-      display: flex;
-
-      &:hover {
-          cursor: pointer;
-          color: $highlight-color;
-          transform: scale(1.1);
-      }
-  }
-  */
 }
 .socials-container .socials-list .socials-li a {
   text-decoration: none;
@@ -132,8 +116,8 @@ body {
   margin-top: 15px;
 }
 .navbar-container .navbar-list {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 200;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
   list-style: none;
   display: flex;
   flex-direction: row;

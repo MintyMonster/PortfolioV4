@@ -1,10 +1,28 @@
+// Variables
 $background-color: #121212;
 $highlight-color: #c992f1;
 $secondary-color: white;
 $tertiary-color: #b8b7b8;
+$primary-font: "Lato", sans-serif;
 
-$primary-font: "Montserrat", sans-serif;
+// Define gradient colors
+$gradient1: rgba(0, 0, 0, 0), #8e44ad; // Dark purple
+$gradient2: rgba(0, 0, 0, 0), #6c3483; // Deep purple
+$gradient3: rgba(0, 0, 0, 0), #663399; // Royal purple
+$gradient4: rgba(0, 0, 0, 0), #9370DB; // Medium purple
 
+
+// Mixin for gradient background
+@mixin gradient-background($gradient) {
+    background: linear-gradient(to right, nth($gradient, 1) 5%, nth($gradient, 2));
+}
+
+// Mixin for common transition properties
+@mixin transition-all($duration: 400ms, $timing: ease-in-out) {
+    transition: all $duration $timing;
+}
+
+// Main styles
 .options {
     display: flex;
     justify-content: left;
@@ -84,13 +102,12 @@ $primary-font: "Montserrat", sans-serif;
 .slide-container {
     position: absolute;
     display: flex;
-    //border: 1px solid white;
     height: 92vh;
     margin-top: 85px;
     bottom: 0;
     right: 0;
     border-radius: 25px 0 0 25px;
-    transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear, width 200ms linear;
+    @include transition-all(300ms, linear);
 
     .slide-text-container {
         position: absolute;
@@ -102,14 +119,13 @@ $primary-font: "Montserrat", sans-serif;
         margin-left: 150px;
         margin-top: 50px;
         width: inherit;
-        transition: opacity 300ms ease-in-out;
+        @include transition-all;
 
         .slide-text-row-container {
             display: flex;
             flex-direction: row;
             gap: 3em;
             justify-content: center;
-
 
             .slide-github-container {
                 width: inherit;
@@ -121,13 +137,39 @@ $primary-font: "Montserrat", sans-serif;
                     text-decoration: none;
                     color: $tertiary-color;
                     font-size: 40px;
-                    transition: transform 100ms linear;
+                    @include transition-all(100ms);
 
                     &:hover {
                         transform: scale(1.1);
                     }
                 }
             }
+
+            .programming-language-ul {
+                width: inherit;
+                list-style: none;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 0;
+                margin: 0;
+                gap: 1em;
+
+                margin-bottom: -15px;
+                margin-top: -15px;
+            
+                .programming-language {
+
+                    font-size: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    height: 30px;
+                    color: #6a5acd; // Text color
+                }
+            }
+            
 
             .slide-text-header {
                 font-size: 50px;
@@ -144,11 +186,8 @@ $primary-font: "Montserrat", sans-serif;
                 float: right;
                 margin-right: 200px;
                 border-radius: 25px;
-
-                // Change when editing all images
-                background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png");
-                background-position: center;
                 background-size: cover;
+                //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
             }
         }
     }
@@ -165,20 +204,18 @@ $primary-font: "Montserrat", sans-serif;
         right: 0;
         gap: 1.5em;
         list-style: none;
-        transition: visibility 300ms linear, opacity 300ms linear, transform 500ms linear, width 200ms linear;
+        @include transition-all;
 
         .slide-option {
             width: 300px;
             height: 150px;
             border: 1px solid white;
             border-radius: 25px;
-            transition: all 200ms ease-in-out;
             overflow: hidden;
-            
-            // Change to different options eventually
-            background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png");
-            background-position: center;
             background-size: cover;
+            background-repeat: no-repeat;
+            //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
+            @include transition-all(200ms, ease-in-out);
 
             &:hover {
                 cursor: pointer;
@@ -199,42 +236,42 @@ $primary-font: "Montserrat", sans-serif;
                 background-color: rgba(0, 0, 0, 0.5);
                 border-radius: 25px;
                 opacity: 0;
-                transition: opacity 250ms linear;
+                @include transition-all(250ms, linear);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
+
                 .slide-option-text {
                     color: $tertiary-color;
                     font-family: $primary-font;
-                    font-weight: 300;
+                    font-weight: 400;
                     font-size: 25px;
                     opacity: 0;
-                    transition: opacity 400ms linear;
+                    @include transition-all(400ms, linear);
                 }
             }
         }
     }
 }
 
+// Apply gradients to containers
 .games-slide-container {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(108,9,121,1) 25%, rgba(43,0,116,1) 75%); 
-    // 2, 25, 75
+    @include gradient-background($gradient1);
 }
 
 .website-slide-container {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(9,9,121,1) 25%, rgba(0,212,255,1) 75%); 
+    @include gradient-background($gradient2);
 }
 
 .software-slide-container {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0) 4%, rgba(2,10,139,1) 25%, rgba(208,0,208,1) 75%); 
+    @include gradient-background($gradient3);
 }
 
-// Dynamic change for sliders
 
+.other-slide-container {
+    @include gradient-background($gradient4);
+}
+// Dynamic change for sliders and text
 .show-container {
     opacity: 1;
     transform: translateX(0);
@@ -249,8 +286,6 @@ $primary-font: "Montserrat", sans-serif;
     width: 0vw;
 }
 
-// Dynamic change for text
-
 .show-text {
     opacity: 1;
     visibility: visible !important;
@@ -259,4 +294,67 @@ $primary-font: "Montserrat", sans-serif;
 .hide-text {
     opacity: 0;
     visibility: hidden !important;
+}
+
+// Slide images
+
+/////////////////// GAMES /////////////////////
+/// 
+// MobContracts
+.slide-text-container-games-image-one {
+    background: url("https://i.ibb.co/hWZbC0R/Screenshot-2024-03-17-035803.png");
+}
+
+.slide-options-games-one {
+    background: url("https://i.ibb.co/xhV5YnB/mobcontractsinnit.png");
+    background-position: center;
+}
+
+// Periphery
+.slide-text-container-games-image-two {
+    background: url("https://i.ibb.co/sbvb0zZ/Screenshot-2024-03-17-051931.png");
+}
+
+.slide-options-games-two {
+    background: url("https://i.ibb.co/xJCcvvp/Screenshot-2024-03-17-052445.png");
+    background-position: center;
+    background-size: contain;
+}
+
+// MetroCore
+.slide-text-container-games-image-three {
+    background: url("https://i.ibb.co/9h7FcQM/Screenshot-2024-03-17-043328.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.slide-options-games-three {
+    background: url("https://i.ibb.co/bRzCnD7/Ashby-PNG.png");
+    background-position: center;
+    background-size: 10px;
+}
+
+// Project: Main menu
+.slide-text-container-games-image-four {
+    background: url("https://i.ibb.co/BntfqhY/Screenshot-2024-03-17-044432.png");
+    background-position: center;
+    background-size: contain;
+}
+
+.slide-options-games-four {
+    background: url("https://i.ibb.co/8Krk2fW/Screenshot-20230205-230339.png");
+    background-position: center;
+}
+
+/////////////////// WEBSITES /////////////////////
+
+// My portfolio
+.slide-text-container-website-image-one {
+    background: url("https://i.ibb.co/1fZGZmY/Screenshot-2024-03-17-054130.png");
+}
+
+.slide-options-website-one {
+    background: url("https://i.ibb.co/qFwk4pz/Screenshot-2024-03-17-054036.png");
+    background-position: center;
+    background-size: cover;
 }
