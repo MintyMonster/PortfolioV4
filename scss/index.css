@@ -1,3 +1,8 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 .title-container {
   position: absolute;
   top: 0;
@@ -9,7 +14,7 @@
   margin: auto;
   text-align: center;
   font-family: "Lato", sans-serif;
-  color: white;
+  color: #b8b7b8;
 }
 .title-container .title-main {
   font-size: 5em;

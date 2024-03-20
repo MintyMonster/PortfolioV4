@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE-Edge">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./scss/index.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="./scss/contactme.css" type="text/css" media="screen">
     <link rel="stylesheet" href="./scss/main.css" type="text/css" media="screen">
 
     <!-- Google fonts -->
@@ -21,7 +21,7 @@
     <!-- Font awesome kit -->
     <script src="https://kit.fontawesome.com/23196d1ae5.js" crossorigin="anonymous"></script>
 
-    <title>Cameron Liddell - Home</title>
+    <title>Cameron Liddell - Contact me</title>
     <link rel="icon"
         href="https://user-images.githubusercontent.com/78669960/115617060-da173b00-a2e8-11eb-868f-b4b81770b68d.png">
 </head>
@@ -32,7 +32,7 @@
     <div class="no-phone">
         <img src="https://user-images.githubusercontent.com/78669960/115617060-da173b00-a2e8-11eb-868f-b4b81770b68d.png"
             alt="logo" class="progress-logo">
-            <div class="under-development">This website currently doesn't have mobile-view.<br>Coming soon!</div>
+        <div class="under-development">This website currently doesn't have mobile-view.<br>Coming soon!</div>
     </div>
 
     <div class="progress-overlay" id="progress-overlay">
@@ -94,17 +94,33 @@
             <li class="navbar-spacer"></li>
             <li class="navbar-cv navbar-link"><a href="##" class="navbar-cv-link">CV</a></li>
             <li class="navbar-spacer"></li>
-            <li class="navbar-contact navbar-link"><a href="./contactme.html" class="navbar-contact-link">Contact</a></li>
+            <li class="navbar-contact navbar-link"><a href="./contactme.html" class="navbar-contact-link">Contact</a>
+            </li>
         </ul>
     </aside>
 
-    <div data-tilt class="title-container">
-        <div class="title-main">Hi, I'm Cameron,</div>
-        <div class="title-subtitle">I'm a junior games developer from Oxford.</div>
-        <img src="https://user-images.githubusercontent.com/78669960/115617060-da173b00-a2e8-11eb-868f-b4b81770b68d.png"
-            alt="" class="title-image">
+    <div class="contact-container">
+        <div class="header-container">
+            <p class="header">Contact me</p>
+            <p class="email">camerongliddell@gmail.com</p>
+            <p class="number">07575 185583</p>
+        </div>
+        <div class="form-container">
+            <input type="text" id="fname" name="fullname" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="tel" id="phone" name="phonenumber" placeholder="Phone number">
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+            <input type="text" id="message" name="message" placeholder="Message">
+            <button id="btn">
+                <p id="btnText">Submit</p>
+                <div class="check-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                        <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+            </button>
+        </div>
     </div>
-
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"
@@ -113,6 +129,16 @@
     <!-- Javascript -->
     <script src="./js/progress.js"></script>
     <script src="./js/tilt.js"></script>
+
+    <script type="text/javascript">
+        const btn = document.querySelector("#btn");
+        const btnText = document.querySelector("#btnText");
+
+        btn.onclick = () => {
+            btnText.innerHTML = "Thanks";
+            btn.classList.add("active");
+        };
+    </script>
 </body>
 
 </html>

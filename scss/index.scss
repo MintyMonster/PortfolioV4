@@ -2,15 +2,22 @@
 $background-color: #121212;
 $highlight-color: #6915c6;
 $secondary-color: white;
+$tertiary-color: #b8b7b8;
 $primary-font: "Lato", sans-serif;
 // Fade funcs
+
+body {
+    width: 100vw;
+    height: 100vh;
+    //background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
+}
 
 .title-container {
 
     //border: 1px solid white;
 
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -21,7 +28,7 @@ $primary-font: "Lato", sans-serif;
     text-align: center;
 
     font-family: $primary-font;
-    color: white;
+    color: $tertiary-color;
 
     .title-main {
         font-size: 5em;

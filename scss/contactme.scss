@@ -1,0 +1,164 @@
+$background-color: #121212;
+$highlight-color: #c992f1;
+$secondary-color: white;
+$tertiary-color: #b8b7b8;
+
+$primary-font: "Lato", sans-serif;
+
+$gradient3: rgba(0, 0, 0, 0), #663399; // Royal purple
+
+// Mixin for gradient background
+@mixin gradient-background($gradient) {
+    background: linear-gradient(to bottom, nth($gradient, 1) 7%, nth($gradient, 2));
+}
+/*
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
+}*/
+
+.contact-container {
+    position: absolute;
+    width: 600px;
+    height: 650px;
+
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: $tertiary-color;
+    font-family: $primary-font;
+    margin: 0;
+
+    gap: 4em;
+
+    .header-container {
+        color: $tertiary-color;
+        font-family: $primary-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        position: relative;
+        padding: 0;
+
+        .header {
+            font-size: 60px;
+        }
+
+        .number {
+            font-size: 25px;
+            margin-top: -15px;
+        }
+
+        .email {
+            font-size: 25px;
+            margin-top: -50px;
+        }
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5em;
+
+        margin-top: -30px;
+
+        width: 100%;
+
+        input[type=text], input[type=email], input[type=tel] {
+            width: 70%;
+            border: 0px;
+            background-color: rgba(0, 0, 0, 0);
+            border-bottom: 1px solid $tertiary-color;
+            font-family: $primary-font;
+            font-size: 25px;
+            color: $tertiary-color;
+
+            &:focus {
+                outline: none;
+                border-bottom: 1px solid $highlight-color;
+            }
+        }
+
+        // Button
+
+        button{
+            width: 100px;
+            height: 40px;
+            border: none;
+            outline: none;
+            background: $background-color;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            font-family: $primary-font;
+            border: 1px solid $highlight-color;
+        }
+        
+        .check-box{
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+            position: absolute;
+            top: 0;
+            right: -40px;
+            opacity: 0;
+        }
+        
+        .check-box svg{
+            width: 20px;
+            margin: 10px;
+        }
+        
+        svg path{
+            stroke-width: 3;
+            stroke: #fff;
+            stroke-dasharray: 34;
+            stroke-dashoffset: 34;
+            stroke-linecap: round;
+        }
+        
+        .active{
+            background: $highlight-color;
+            transition: 0s;
+            padding-left: 15px;
+        }
+        
+        .active .check-box{
+            right: 0;
+            opacity: 1;
+            transition: 1s;
+        }
+        
+        .active p{
+            margin-right: 125px;
+            transition: 1s;
+        }
+        
+        .active svg path{
+            stroke-dashoffset: 0;
+            transition: 1s;
+            transition-delay: 1s;
+        }
+    }
+
+}

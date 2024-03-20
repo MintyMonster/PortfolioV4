@@ -1,0 +1,126 @@
+/*
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
+}*/
+.contact-container {
+  position: absolute;
+  width: 600px;
+  height: 650px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  gap: 4em;
+}
+.contact-container .header-container {
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+}
+.contact-container .header-container .header {
+  font-size: 60px;
+}
+.contact-container .header-container .number {
+  font-size: 25px;
+  margin-top: -15px;
+}
+.contact-container .header-container .email {
+  font-size: 25px;
+  margin-top: -50px;
+}
+.contact-container .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: -30px;
+  width: 100%;
+}
+.contact-container .form-container input[type=text], .contact-container .form-container input[type=email], .contact-container .form-container input[type=tel] {
+  width: 70%;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+  color: #b8b7b8;
+}
+.contact-container .form-container input[type=text]:focus, .contact-container .form-container input[type=email]:focus, .contact-container .form-container input[type=tel]:focus {
+  outline: none;
+  border-bottom: 1px solid #c992f1;
+}
+.contact-container .form-container button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #121212;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #c992f1;
+}
+.contact-container .form-container .check-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: -40px;
+  opacity: 0;
+}
+.contact-container .form-container .check-box svg {
+  width: 20px;
+  margin: 10px;
+}
+.contact-container .form-container svg path {
+  stroke-width: 3;
+  stroke: #fff;
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+  stroke-linecap: round;
+}
+.contact-container .form-container .active {
+  background: #c992f1;
+  transition: 0s;
+  padding-left: 15px;
+}
+.contact-container .form-container .active .check-box {
+  right: 0;
+  opacity: 1;
+  transition: 1s;
+}
+.contact-container .form-container .active p {
+  margin-right: 125px;
+  transition: 1s;
+}
+.contact-container .form-container .active svg path {
+  stroke-dashoffset: 0;
+  transition: 1s;
+  transition-delay: 1s;
+}/*# sourceMappingURL=contactme.css.map */

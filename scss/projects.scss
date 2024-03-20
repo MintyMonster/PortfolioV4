@@ -35,10 +35,9 @@ $slide-color-other: #9370DB;
     justify-content: left;
     align-items: start;
     margin-left: 0;
-    margin-top: 10vh;
-    //border: 1px solid white;
-    width: 99vw;
-    height: 89vh;
+    margin-top: 100px;
+    width: 100vw;
+    height: 75px;
     left: 0;
     bottom: 0;
     z-index: 10;
@@ -58,13 +57,11 @@ $slide-color-other: #9370DB;
         font-weight: 400;
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         gap: 1%;
-        margin-top: 30px;
         z-index: inherit;
         width: 100vw;
-        margin-left: 160px;
 
         .options-list-li {
 
@@ -126,7 +123,6 @@ $slide-color-other: #9370DB;
                         background-position: 100% 100%;
                         background-size: 100% 2px;
                         color: $secondary-color;
-                        width: 200px;
 
                         .options-slide {
                             transform: translateX(0px);
@@ -145,24 +141,29 @@ $slide-color-other: #9370DB;
     position: absolute;
     display: flex;
     height: 91vh;
-    margin-top: 100px;
     bottom: 0;
     right: 0;
     //border-radius: 25px 0 0 25px;
     @include transition-all(300ms, linear);
     z-index: 0;
+    justify-content: center;
 
     .slide-text-container {
         position: absolute;
         color: $tertiary-color;
         font-family: $primary-font;
         font-weight: 300;
-        top: 0;
-        left: 0;
-        margin-left: 200px;
+        top: 40%;
+        left: 50%;
         margin-top: 50px;
-        width: inherit;
+        width: 1200px;
+        height: 600px;
         @include transition-all;
+        transform: translate(-50%, -50%);
+        padding-left: 200px;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 25px;
 
         .slide-text-row-container {
             display: flex;
@@ -216,28 +217,30 @@ $slide-color-other: #9370DB;
 
             .slide-text-header {
                 font-size: 2vw;
+                margin-top: 7vh;
             }
 
             .slide-text-text {
-                font-size: 1.2vw;
+                font-size: 1vw;
             }
 
             .slide-text-container-image {
-                border: 1px solid white;
+                border: 4px solid $background-color;
                 width: 22vw;
-                height: 65vh;
+                height: 55vh;
                 max-width: 400px;
-                max-height: 600px;
+                max-height: 550px;
 
                 float: right;
                 margin-right: 200px;
+                margin-top: 4vh;
                 border-radius: 25px;
                 background-size: cover;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
                 //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
-            
+
                 &:hover {
-                    border: 1px solid $icon-color;
+                    //border: 1px solid $icon-color;
                 }
             }
         }
@@ -252,7 +255,6 @@ $slide-color-other: #9370DB;
         width: 100vw;
         height: 15vh;
         bottom: 0;
-        right: 0;
         gap: 1.5em;
         list-style: none;
         @include transition-all;
@@ -260,12 +262,12 @@ $slide-color-other: #9370DB;
         .slide-option {
             width: 200px;
             height: 100px;
-            border: 1px solid white;
+            border: 4px solid $background-color;
             border-radius: 25px;
             overflow: hidden;
             background-size: cover;
             background-repeat: no-repeat;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
             //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
             @include transition-all(200ms, ease-in-out);
 
@@ -286,7 +288,6 @@ $slide-color-other: #9370DB;
                 width: inherit;
                 height: inherit;
                 background-color: rgba(0, 0, 0, 0.5);
-                border-radius: 25px;
                 opacity: 0;
                 @include transition-all(250ms, linear);
                 display: flex;
@@ -307,6 +308,7 @@ $slide-color-other: #9370DB;
 }
 
 // Apply gradients to containers
+/*
 .games-slide-container {
     @include gradient-background($gradient1);
 }
@@ -322,6 +324,7 @@ $slide-color-other: #9370DB;
 .other-slide-container {
     @include gradient-background($gradient4);
 }
+*/
 
 // Dynamic change for sliders and text
 .show-container {
@@ -332,6 +335,13 @@ $slide-color-other: #9370DB;
 }
 
 .hide-container {
+    opacity: 0;
+    transform: translateX(100%);
+    visibility: hidden !important;
+    width: 0vw;
+}
+
+.hide-container-end {
     opacity: 0;
     transform: translateX(100%);
     visibility: hidden !important;
@@ -410,18 +420,6 @@ $slide-color-other: #9370DB;
     background-size: cover;
 }
 
-// Custom Maths
-.slide-text-container-games-image-six {
-    background: url("https://i.ibb.co/SKssTpD/Screenshot-2024-03-17-204302.png");
-    background-position: center;
-}
-
-.slide-options-games-six {
-    background: url("https://i.ibb.co/KNxc0PD/Screenshot-2024-03-17-204450.png");
-    background-position: left;
-    background-size: cover;
-}
-
 /////////////////// WEBSITES /////////////////////
 
 // My portfolio
@@ -492,4 +490,27 @@ $slide-color-other: #9370DB;
     background: url("https://i.ibb.co/3v4KMhv/Screenshot-2024-03-17-211650.png");
     background-position: center;
     background-size: cover;
+}
+
+// Custom Maths
+.slide-text-container-other-image-one {
+    background: url("https://i.ibb.co/SKssTpD/Screenshot-2024-03-17-204302.png");
+    background-position: center;
+}
+
+.slide-options-other-one {
+    background: url("https://i.ibb.co/KNxc0PD/Screenshot-2024-03-17-204450.png");
+    background-position: left;
+    background-size: cover;
+}
+
+// AI pop
+.slide-text-container-other-image-two {
+    background: url("https://i.ibb.co/CzGXqVN/Screenshot-2024-03-20-013020.png");
+    background-position: center;
+}
+
+.slide-options-other-two {
+    background: url("https://i.ibb.co/5YVHX1V/Screenshot-2024-03-20-013222.png");
+    background-position: center;
 }

@@ -18,10 +18,11 @@ $(document).ready(function () {
 
     $(".other-options-list-link").click(function() {
         toggleContainers(".other-slide-container", ".slide-option-container-other");
-    })
+    });
 
     function toggleContainers(slideContainer, slideOptionContainer) {
         $(".slide-container, .slide-option-container").removeClass(showClass).addClass(hideClass);
         $(slideContainer + ", " + slideOptionContainer).removeClass(hideClass).addClass(showClass);
+
     }
 });

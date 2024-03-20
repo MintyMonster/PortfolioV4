@@ -12,6 +12,43 @@ body {
     overflow-y: hidden;
 }
 
+.no-phone {
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+    position: absolute;
+    margin: 0 0 0 0;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+
+    .progress-logo {
+        position: absolute;
+        width: 5rem;
+        margin-bottom: 8rem;
+    }
+
+    .under-development {
+        color: $tertiary-color;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: $primary-font;
+        margin-top: 40px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1400px) and (min-height: 900px) {
+    .no-phone {
+        display: none; /* Hide on desktop screens */
+    }
+}
+
 #progress-overlay.fade {
     opacity: 0;
 }
