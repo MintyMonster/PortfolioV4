@@ -20,8 +20,9 @@ body {
   height: 100vh;
   position: absolute;
   background-color: #121212;
-  z-index: 3;
+  z-index: 20;
   top: 0;
+  left: 0;
   align-items: center;
   display: flex;
   justify-content: center;

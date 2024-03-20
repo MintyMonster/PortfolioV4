@@ -1,0 +1,29 @@
+/* Small mobile devices (e.g., small smartphones) */
+@media (max-width: 360px) {
+    
+}
+
+/* Normal mobile devices (e.g., regular smartphones) */
+@media (min-width: 361px) and (max-width: 767px) {
+    /* CSS rules for normal mobile devices */
+}
+
+/* Small iPad (e.g., iPad Mini) */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* CSS rules for small iPad */
+}
+
+/* Normal iPad (e.g., iPad Pro) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* CSS rules for normal iPad */
+}
+
+/* Desktop */
+@media (min-width: 1200px) and (max-width: 1919px) {
+    /* CSS rules for desktop */
+}
+
+/* Ultra-wide desktop */
+@media (min-width: 1920px) {
+    /* CSS rules for ultra-wide desktop */
+}

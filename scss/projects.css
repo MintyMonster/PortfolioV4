@@ -8,6 +8,7 @@
   height: 89vh;
   left: 0;
   bottom: 0;
+  z-index: 10;
   /*
   .options-games {
       background: url("https://user-images.githubusercontent.com/78669960/216851027-96166921-e206-4288-ad82-8463027bb45c.png");
@@ -22,14 +23,19 @@
   font-family: "Lato", sans-serif;
   font-weight: 400;
   display: flex;
-  flex-direction: column;
-  gap: 2.5em;
-  margin-top: 250px;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1%;
+  margin-top: 30px;
+  z-index: inherit;
+  width: 100vw;
+  margin-left: 160px;
 }
 .options .options-list .options-list-li .options-list-link {
   text-decoration: none;
   color: #b8b7b8;
-  font-size: 30px;
+  font-size: 1.1vw;
 }
 .options .options-list .options-list-li .options-list-link .options-list-div-games {
   background-image: linear-gradient(#8e44ad 0 0);
@@ -50,7 +56,12 @@
   background-position: 0 100%;
   background-size: 0% 2px;
   background-repeat: no-repeat;
-  transition: background-size 0.5s, background-position 0s 0.5s;
+  transition: background-size 0.5s, background-position 0s 0.5s, width 0.5s;
+  width: 11vw;
+  overflow: hidden;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
 }
 .options .options-list .options-list-li .options-list-link .options-list-div .options-slide {
   transform: translateX(-50px);
@@ -58,10 +69,15 @@
   transition: all 400ms ease-in-out;
   margin-right: 4px;
 }
+.options .options-list .options-list-li .options-list-link .options-list-div .icon {
+  margin-right: 6px;
+  color: #6a5acd;
+}
 .options .options-list .options-list-li .options-list-link .options-list-div:hover {
   background-position: 100% 100%;
   background-size: 100% 2px;
   color: white;
+  width: 200px;
 }
 .options .options-list .options-list-li .options-list-link .options-list-div:hover .options-slide {
   transform: translateX(0px);
@@ -71,12 +87,12 @@
 .slide-container {
   position: absolute;
   display: flex;
-  height: 92vh;
-  margin-top: 85px;
+  height: 91vh;
+  margin-top: 100px;
   bottom: 0;
   right: 0;
-  border-radius: 25px 0 0 25px;
   transition: all 300ms linear;
+  z-index: 0;
 }
 .slide-container .slide-text-container {
   position: absolute;
@@ -85,7 +101,7 @@
   font-weight: 300;
   top: 0;
   left: 0;
-  margin-left: 150px;
+  margin-left: 200px;
   margin-top: 50px;
   width: inherit;
   transition: all 400ms ease-in-out;
@@ -105,7 +121,7 @@
 .slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link {
   text-decoration: none;
   color: #b8b7b8;
-  font-size: 40px;
+  font-size: 1.5vw;
   transition: all 100ms ease-in-out;
 }
 .slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link:hover {
@@ -119,12 +135,12 @@
   align-items: flex-start;
   padding: 0;
   margin: 0;
-  gap: 1em;
+  gap: 1%;
   margin-bottom: -15px;
   margin-top: -15px;
 }
 .slide-container .slide-text-container .slide-text-row-container .programming-language-ul .programming-language {
-  font-size: 25px;
+  font-size: 1.2vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,19 +149,25 @@
   color: #6a5acd;
 }
 .slide-container .slide-text-container .slide-text-row-container .slide-text-header {
-  font-size: 50px;
+  font-size: 2vw;
 }
 .slide-container .slide-text-container .slide-text-row-container .slide-text-text {
-  font-size: 25px;
+  font-size: 1.2vw;
 }
 .slide-container .slide-text-container .slide-text-row-container .slide-text-container-image {
   border: 1px solid white;
-  width: 400px;
-  height: 600px;
+  width: 22vw;
+  height: 65vh;
+  max-width: 400px;
+  max-height: 600px;
   float: right;
   margin-right: 200px;
   border-radius: 25px;
   background-size: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-text-container-image:hover {
+  border: 1px solid #6a5acd;
 }
 .slide-container .slide-option-container {
   position: absolute;
@@ -153,7 +175,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 78vw;
+  width: 100vw;
   height: 15vh;
   bottom: 0;
   right: 0;
@@ -162,13 +184,14 @@
   transition: all 400ms ease-in-out;
 }
 .slide-container .slide-option-container .slide-option {
-  width: 300px;
-  height: 150px;
+  width: 200px;
+  height: 100px;
   border: 1px solid white;
   border-radius: 25px;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
   transition: all 200ms ease-in-out;
 }
 .slide-container .slide-option-container .slide-option:hover {
@@ -196,32 +219,32 @@
   color: #b8b7b8;
   font-family: "Lato", sans-serif;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 15px;
   opacity: 0;
   transition: all 400ms linear;
 }
 
 .games-slide-container {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #8e44ad);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 3%, #8e44ad);
 }
 
 .website-slide-container {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #6c3483);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 3%, #6c3483);
 }
 
 .software-slide-container {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #663399);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 3%, #663399);
 }
 
 .other-slide-container {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, #9370DB);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 3%, #9370DB);
 }
 
 .show-container {
   opacity: 1;
   transform: translateX(0);
   visibility: visible !important;
-  width: 82vw;
+  width: 100vw;
 }
 
 .hide-container {
@@ -283,6 +306,28 @@
   background-position: center;
 }
 
+.slide-text-container-games-image-five {
+  background: url("https://i.ibb.co/G9syq6z/Screenshot-2024-03-17-210048.png");
+  background-position: center;
+}
+
+.slide-options-games-five {
+  background: url("https://i.ibb.co/LN0MqF7/Screenshot-2024-03-17-205838.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.slide-text-container-games-image-six {
+  background: url("https://i.ibb.co/SKssTpD/Screenshot-2024-03-17-204302.png");
+  background-position: center;
+}
+
+.slide-options-games-six {
+  background: url("https://i.ibb.co/KNxc0PD/Screenshot-2024-03-17-204450.png");
+  background-position: left;
+  background-size: cover;
+}
+
 .slide-text-container-website-image-one {
   background: url("https://i.ibb.co/1fZGZmY/Screenshot-2024-03-17-054130.png");
 }
@@ -335,33 +380,11 @@
 }
 
 .slide-text-container-software-image-two {
-  background: url("https://i.ibb.co/SKssTpD/Screenshot-2024-03-17-204302.png");
-  background-position: center;
-}
-
-.slide-options-software-two {
-  background: url("https://i.ibb.co/KNxc0PD/Screenshot-2024-03-17-204450.png");
-  background-position: left;
-  background-size: cover;
-}
-
-.slide-text-container-software-image-three {
-  background: url("https://i.ibb.co/G9syq6z/Screenshot-2024-03-17-210048.png");
-  background-position: center;
-}
-
-.slide-options-software-three {
-  background: url("https://i.ibb.co/LN0MqF7/Screenshot-2024-03-17-205838.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.slide-text-container-software-image-four {
   background: url("https://i.ibb.co/gvWkv9H/Screenshot-2024-03-17-211450.png");
   background-position: center;
 }
 
-.slide-options-software-four {
+.slide-options-software-two {
   background: url("https://i.ibb.co/3v4KMhv/Screenshot-2024-03-17-211650.png");
   background-position: center;
   background-size: cover;

@@ -25,8 +25,9 @@ body {
     height: 100vh;
     position: absolute;
     background-color: $background-color;
-    z-index: 3;
+    z-index: 20;
     top: 0;
+    left: 0;
 
     align-items: center;
     display: flex;
