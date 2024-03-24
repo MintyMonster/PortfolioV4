@@ -4,7 +4,7 @@ body {
     height: 100vh;
     background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
 }*/
-.contact-container {
+.full-contact-container {
   position: absolute;
   width: 600px;
   height: 650px;
@@ -23,7 +23,7 @@ body {
   margin: 0;
   gap: 4em;
 }
-.contact-container .header-container {
+.full-contact-container .header-container {
   color: #b8b7b8;
   font-family: "Lato", sans-serif;
   display: flex;
@@ -34,18 +34,18 @@ body {
   position: relative;
   padding: 0;
 }
-.contact-container .header-container .header {
+.full-contact-container .header-container .header {
   font-size: 60px;
 }
-.contact-container .header-container .number {
+.full-contact-container .header-container .number {
   font-size: 25px;
   margin-top: -15px;
 }
-.contact-container .header-container .email {
+.full-contact-container .header-container .email {
   font-size: 25px;
   margin-top: -50px;
 }
-.contact-container .form-container {
+.full-contact-container .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ body {
   margin-top: -30px;
   width: 100%;
 }
-.contact-container .form-container input[type=text], .contact-container .form-container input[type=email], .contact-container .form-container input[type=tel] {
+.full-contact-container .form-container input[type=text], .full-contact-container .form-container input[type=email], .full-contact-container .form-container input[type=tel] {
   width: 70%;
   border: 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -63,11 +63,11 @@ body {
   font-size: 25px;
   color: #b8b7b8;
 }
-.contact-container .form-container input[type=text]:focus, .contact-container .form-container input[type=email]:focus, .contact-container .form-container input[type=tel]:focus {
+.full-contact-container .form-container input[type=text]:focus, .full-contact-container .form-container input[type=email]:focus, .full-contact-container .form-container input[type=tel]:focus {
   outline: none;
   border-bottom: 1px solid #c992f1;
 }
-.contact-container .form-container button {
+.full-contact-container .form-container button {
   width: 100px;
   height: 40px;
   border: none;
@@ -84,7 +84,7 @@ body {
   font-family: "Lato", sans-serif;
   border: 1px solid #c992f1;
 }
-.contact-container .form-container .check-box {
+.full-contact-container .form-container .check-box {
   width: 40px;
   height: 40px;
   border-radius: 40px;
@@ -94,33 +94,57 @@ body {
   right: -40px;
   opacity: 0;
 }
-.contact-container .form-container .check-box svg {
+.full-contact-container .form-container .check-box svg {
   width: 20px;
   margin: 10px;
 }
-.contact-container .form-container svg path {
+.full-contact-container .form-container svg path {
   stroke-width: 3;
   stroke: #fff;
   stroke-dasharray: 34;
   stroke-dashoffset: 34;
   stroke-linecap: round;
 }
-.contact-container .form-container .active {
+.full-contact-container .form-container .active {
   background: #c992f1;
   transition: 0s;
   padding-left: 15px;
 }
-.contact-container .form-container .active .check-box {
+.full-contact-container .form-container .active .check-box {
   right: 0;
   opacity: 1;
   transition: 1s;
 }
-.contact-container .form-container .active p {
+.full-contact-container .form-container .active p {
   margin-right: 125px;
   transition: 1s;
 }
-.contact-container .form-container .active svg path {
+.full-contact-container .form-container .active svg path {
   stroke-dashoffset: 0;
   transition: 1s;
   transition-delay: 1s;
+}
+
+@media only screen and (max-width: 60em) {
+  .contact-container .header-container {
+    color: #b8b7b8;
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    gap: 2.5em;
+  }
+  .contact-container .header-container .header {
+    font-size: 60px;
+  }
+  .contact-container .header-container .number {
+    font-size: 25px;
+  }
+  .contact-container .header-container .email {
+    font-size: 25px;
+  }
 }/*# sourceMappingURL=contactme.css.map */

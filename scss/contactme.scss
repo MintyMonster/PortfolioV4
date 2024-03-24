@@ -18,7 +18,7 @@ body {
     background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
 }*/
 
-.contact-container {
+.full-contact-container {
     position: absolute;
     width: 600px;
     height: 650px;
@@ -159,6 +159,40 @@ body {
             transition: 1s;
             transition-delay: 1s;
         }
+    }
+
+}
+
+@media only screen and (max-width: 60em) {
+
+    .contact-container {
+
+        .header-container {
+            color: $tertiary-color;
+            font-family: $primary-font;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            padding: 0;
+            gap: 2.5em;
+    
+            .header {
+                font-size: 60px;
+            }
+    
+            .number {
+                font-size: 25px;
+            }
+    
+            .email {
+                font-size: 25px;
+            }
+        }
+
+        
     }
 
 }

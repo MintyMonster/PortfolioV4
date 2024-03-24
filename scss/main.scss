@@ -23,7 +23,7 @@ body {
     left: 0;
 
     align-items: center;
-    display: flex;
+    display: none; // flex?
     justify-content: center;
     opacity: 1;
 
@@ -43,9 +43,14 @@ body {
     }
 }
 
+.burger-container, #responsive-menu {
+    display: none;
+}
+
 @media only screen and (min-width: 1400px) and (min-height: 900px) {
     .no-phone {
-        display: none; /* Hide on desktop screens */
+        display: none;
+        /* Hide on desktop screens */
     }
 }
 
@@ -62,7 +67,7 @@ body {
     height: 100vh;
     position: absolute;
     background-color: $background-color;
-    z-index: 20;
+    z-index: 200;
     top: 0;
     left: 0;
 
@@ -100,6 +105,7 @@ body {
     left: 0;
     margin-top: 6px;
     margin-left: 25px;
+    display: flex;
 
     img {
         width: 50px;
@@ -203,5 +209,138 @@ body {
             font-weight: 100;
             color: $secondary-color;
         }
+    }
+}
+
+@media only screen and (max-width: 60em) {
+
+    .navbar-container {
+        display: none;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .socials-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+        margin-top: 25px;
+        z-index: 10;
+    }
+
+    .burger-container {
+
+        display: flex;
+        margin-left: 10px;
+
+        svg {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 1.5;
+            cursor: pointer;
+    
+            margin-top: 10px;
+            width: 75px;
+            height: 75px;
+            position: fixed;
+    
+            z-index: 100;
+        }
+    
+        svg path {
+            fill: none;
+            stroke: white;
+            stroke-width: 1px;
+        }
+    
+        svg+svg {
+            margin-left: 1.5rem;
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI, sans-serif;
+        }
+    
+        #top,
+        #bottom {
+            stroke-dasharray: 30, 75.39;
+            transition: all 0.6s cubic-bezier(0.6, 0.33, 0.67, 1.29);
+        }
+    
+        svg.active #top,
+        svg.active #bottom {
+            stroke-dasharray: 75.39;
+            stroke-dashoffset: -60;
+        }
+    
+        svg:nth-child(2) {
+            transform: rotate(0deg);
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+    
+        svg:nth-child(2) path {
+            transition: all 0.4s ease-in-out 0.6s;
+        }
+    
+        svg:nth-child(2).active {
+            transform: rotate(180deg);
+        }
+    
+        .rocket #top {
+            stroke-dasharray: 30, 88;
+        }
+    }
+
+    #responsive-menu {
+        background-color: $background-color;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 9;
+        overflow: hidden;
+
+        transition: all 300ms linear;
+
+        .responsive-navbar-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5em;
+            
+            .responsive-navbar-link {
+                text-align: center;
+                font-size: 35px;
+                font-family: $primary-font;
+
+                border-radius: 25px;
+
+                & a {
+                    text-decoration: none;
+                    color: $tertiary-color;
+                }
+            }
+        }
+    }
+
+    .show-burger {
+        transform: translate(0);
+    }
+
+    .hide-burger {
+        transform: translate(-100%);
     }
 }

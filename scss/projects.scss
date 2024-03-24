@@ -32,8 +32,8 @@ $slide-color-other: #9370DB;
 // Main styles
 .options {
     display: flex;
-    justify-content: left;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     margin-left: 0;
     margin-top: 100px;
     width: 100vw;
@@ -41,6 +41,10 @@ $slide-color-other: #9370DB;
     left: 0;
     bottom: 0;
     z-index: 10;
+
+    @media screen and (min-width: 1921px) and (min-height: 1081px) {
+        margin-top: 150px;
+    }
 
     /*
     .options-games {
@@ -70,6 +74,10 @@ $slide-color-other: #9370DB;
                 text-decoration: none;
                 color: $tertiary-color;
                 font-size: 1.1vw;
+
+                @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                    font-size: 0.5vw;
+                }
 
                 .options-list-div-games {
                     background-image: linear-gradient($slide-color-games 0 0);
@@ -102,6 +110,7 @@ $slide-color-other: #9370DB;
                         width 0.5s;
 
                     width: 11vw;
+                    max-width: 200px;
                     overflow: hidden;
                     white-space: nowrap;
                     top: 0;
@@ -156,8 +165,15 @@ $slide-color-other: #9370DB;
         top: 40%;
         left: 50%;
         margin-top: 50px;
+
+        width: 5vh;
         width: 1200px;
-        height: 600px;
+        min-height: 600px;
+        max-height: 800px;
+
+        overflow: hidden;
+
+
         @include transition-all;
         transform: translate(-50%, -50%);
         padding-left: 200px;
@@ -170,6 +186,10 @@ $slide-color-other: #9370DB;
             flex-direction: row;
             gap: 3em;
             justify-content: center;
+
+            @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                padding: 60px;
+            }
 
             .slide-github-container {
                 width: inherit;
@@ -186,6 +206,10 @@ $slide-color-other: #9370DB;
                     &:hover {
                         transform: scale(1.1);
                     }
+
+                    @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                        font-size: 1.8vh;
+                    }
                 }
             }
 
@@ -197,10 +221,15 @@ $slide-color-other: #9370DB;
                 align-items: flex-start;
                 padding: 0;
                 margin: 0;
-                gap: 1%;
+                gap: 2%;
 
                 margin-bottom: -15px;
                 margin-top: -15px;
+
+                @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                    gap: 40px;
+                    padding-bottom: 20px;
+                }
 
                 .programming-language {
 
@@ -218,10 +247,19 @@ $slide-color-other: #9370DB;
             .slide-text-header {
                 font-size: 2vw;
                 margin-top: 7vh;
+
+                @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                    margin-top: 4vh;
+                    font-size: 1.5vw;
+                  }
             }
 
             .slide-text-text {
                 font-size: 1vw;
+
+                @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                    font-size: 1.5vh;
+                }
             }
 
             .slide-text-container-image {
@@ -239,8 +277,8 @@ $slide-color-other: #9370DB;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
                 //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
 
-                &:hover {
-                    //border: 1px solid $icon-color;
+                @media screen and (min-width: 1921px) and (min-height: 1081px) {
+                    margin-top: 2vh;
                 }
             }
         }
