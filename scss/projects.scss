@@ -1,554 +1,544 @@
-// Maybe add a ticker on image when hovered? Show multiple images :)
-
-// Variables
 $background-color: #121212;
 $highlight-color: #c992f1;
 $secondary-color: white;
 $tertiary-color: #b8b7b8;
-$icon-color: #6a5acd;
+$complimentary-color: #F1C992;
+
 $primary-font: "Lato", sans-serif;
 
-// Define gradient colors
-$gradient1: rgba(0, 0, 0, 0), #8e44ad; // Dark purple
-$gradient2: rgba(0, 0, 0, 0), #6c3483; // Deep purple
-$gradient3: rgba(0, 0, 0, 0), #663399; // Royal purple
-$gradient4: rgba(0, 0, 0, 0), #9370DB; // Medium purple
 
-$slide-color-games: #8e44ad;
-$slide-color-website: #6c3483;
-$slide-color-software: #663399;
-$slide-color-other: #9370DB;
+.main-content-div {
 
-// Mixin for gradient background
-@mixin gradient-background($gradient) {
-    background: linear-gradient(to bottom, nth($gradient, 1) 3%, nth($gradient, 2));
-}
+    width: 75vw;
+    height: 75vh;
 
-// Mixin for common transition properties
-@mixin transition-all($duration: 400ms, $timing: ease-in-out) {
-    transition: all $duration $timing;
-}
+    position: absolute;
 
-// Main styles
-.options {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 0;
-    margin-top: 100px;
+
+    z-index: 3;
+
+    .projects-nav-container {
+
+        width: 100%;
+        position: inherit;
+        top: 0;
+        left: 0;
+
+        .projects-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 1.5em;
+
+            margin-top: 15px;
+            margin-left: 0;
+
+            .projects-nav-link {
+                text-decoration: none;
+                color: $tertiary-color;
+                font-family: $primary-font;
+                font-size: 20px;
+                text-align: center;
+
+                padding: 0 5px 5px 5px;
+
+                background-image: linear-gradient($highlight-color 0 0);
+                background-position: 0 100%;
+                background-size: 0% 2px;
+                background-repeat: no-repeat;
+                transition:
+                    background-size 0.5s,
+                    background-position 0s 0.5s;
+
+                &:hover {
+                    color: $secondary-color;
+                    background-position: 100% 100%;
+                    background-size: 100% 2px;
+                }
+            }
+
+            .projects-nav-spacer {
+                color: $tertiary-color;
+                font-family: $primary-font;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+    }
+
+    .projects-container {
+
+        --mask: linear-gradient(to bottom,
+                rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 70%,
+                rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100% repeat-x;
+
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+
+        position: inherit;
+        bottom: 0;
+
+        width: 86%;
+        height: 85%;
+
+        display: grid;
+        grid-auto-rows: 33%;
+        grid-template-columns: repeat(4, 24%);
+        gap: 1em;
+
+        padding: 10px;
+
+        overflow-y: auto;
+
+        .projects-image-container {
+            overflow: hidden;
+            position: relative;
+            border-radius: 25px;
+
+            &:hover {
+                .overlay {
+
+                    opacity: 1;
+                }
+            }
+
+            .project-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .overlay {
+
+                transition: .2s linear;
+
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                top: 0;
+                left: 0;
+
+                opacity: 0;
+
+                background-color: rgba(18, 18, 18, 0.8);
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                .title {
+
+                    position: absolute;
+
+                    color: $tertiary-color;
+                    font-family: $primary-font;
+                    font-size: 40px;
+                    width: 99%;
+
+                    top: 0;
+
+                    margin-top: 20px;
+
+                    transform: translate(0, -150%);
+                    transition: 250ms linear;
+                }
+
+                .learn-more-link {
+
+                    position: absolute;
+                    bottom: 0;
+
+                    width: 50%;
+                    margin-bottom: 30px;
+
+                    color: $tertiary-color;
+                    font-family: $primary-font;
+                    font-size: 25px;
+
+                    transform: skew(-10deg);
+                    border: 1px solid white;
+
+                    text-decoration: none;
+
+                    vertical-align: middle;
+
+                    // Slide left to right
+                    background: linear-gradient(to right, $highlight-color 50%, rgba(18, 18, 18, 0) 50%);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    transition: all 250ms linear;
+
+                    transform: translate(0, 200%);
+
+                    .learn-more {
+                        transform: skew(-10deg);
+                    }
+
+                    &:hover {
+                        color: $background-color;
+                        background-position: left bottom;
+                    }
+                }
+
+                &:hover {
+
+                    .learn-more-link {
+                        transform: translate(0, 0);
+                    }
+
+                    .title {
+                        transform: translate(0, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.projects-modal-full {
+    z-index: 0;
     width: 100vw;
-    height: 75px;
+    height: 100vh;
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    display: none;
+    transition: opacity 0.5s ease;
+
+    margin: 0;
+    top: 0;
     left: 0;
-    bottom: 0;
-    z-index: 10;
 
-    @media screen and (min-width: 1921px) and (min-height: 1081px) {
-        margin-top: 150px;
+    &.show {
+        z-index: 5;
+        opacity: 1;
+        display: block;
     }
 
-    /*
-    .options-games {
-        background: url("https://user-images.githubusercontent.com/78669960/216851027-96166921-e206-4288-ad82-8463027bb45c.png");
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-    }
-    */
+    .projects-modal {
 
-    .options-list {
-        list-style: none;
-        font-family: $primary-font;
-        font-weight: 400;
+        position: inherit;
+
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 1%;
-        z-index: inherit;
-        width: 100vw;
 
-        .options-list-li {
+        width: 65%;
+        height: 80%;
 
-            .options-list-link {
+        //box-shadow: 0 5px 15px rgba(201, 146, 241, 1), 0 10px 20px rgba(201, 146, 241, 0.8), 0 15px 25px rgba(201, 146, 241, 0.4);
 
-                text-decoration: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background-color: $background-color;
+        overflow: hidden;
+
+        border: 1px solid black;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            border-width: 2px; // Adjust the border thickness
+            border-style: solid;
+            border-color: $complimentary-color;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            width: 15%; // Adjust the width of the border
+            height: 100%; // Adjust the height of the border
+            border-right-width: 0;
+            border-bottom-width: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+            width: 15%; // Adjust the width of the border
+            height: 100%; // Adjust the height of the border
+            border-left-width: 0;
+            border-top-width: 0;
+        }
+
+        .projects-modal-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+
+            opacity: 0;
+            transition: all 300ms linear;
+        }
+
+        .projects-modal-content {
+            max-width: 50%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+
+            .modal-close {
+                position: absolute;
+                font-size: 25px;
                 color: $tertiary-color;
-                font-size: 1.1vw;
+                top: 0;
+                right: 0;
+                margin-top: 10px;
+                margin-right: 15px;
+                transition: all 200ms linear;
 
-                @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                    font-size: 0.5vw;
+                &:hover {
+                    color: white;
                 }
+            }
 
-                .options-list-div-games {
-                    background-image: linear-gradient($slide-color-games 0 0);
+            .modal-title {
+                position: absolute;
+                color: $tertiary-color;
+                font-size: 60px;
+                font-family: $primary-font;
+                text-align: center;
+                top: 0;
+
+                transform: translate(100%, 0);
+                opacity: 0;
+                transition: all 300ms linear;
+
+                margin-top: 100px;
+            }
+
+            .modal-icons {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                font-family: $primary-font;
+                color: $tertiary-color;
+                padding: 0;
+
+                position: absolute;
+                top: 0;
+
+                font-size: 35px;
+                gap: 1em;
+
+                width: 50%;
+
+                transform: translate(0, -200%);
+                transition: all 300ms linear;
+
+            }
+
+            .modal-description {
+                color: $tertiary-color;
+                font-size: 1vw;
+                font-family: $primary-font;
+                padding: 25px;
+
+                opacity: 0;
+                transition: all 300ms linear;
+                z-index: 3;
+            }
+
+            .modal-github {
+                font-size: 1.5vw;
+                font-family: $primary-font;
+                color: $tertiary-color;
+                transition: all 350ms linear;
+                transform: translate(0, 300%);
+                opacity: 0;
+
+                &:hover {
+                    color: white;
                 }
+            }
+        }
+    }
+}
 
-                .options-list-div-website {
-                    background-image: linear-gradient($slide-color-website 0 0);
-                }
+.slide-in {
+    transform: translate(0, 0) !important;
+    transition: all 300ms linear;
+    opacity: 1 !important;
+}
 
-                .options-list-div-software {
-                    background-image: linear-gradient($slide-color-software 0 0);
-                }
+.slide-in-github {
+    transform: translate(0, 0) !important;
+    transition: all 350ms linear;
+    opacity: 1 !important;
+}
 
-                .options-list-div-other {
-                    background-image: linear-gradient($slide-color-other 0 0);
-                }
+.show {
+    opacity: 1 !important;
+}
 
-                .options-list-div {
-                    display: flex;
-                    flex-direction: row;
 
-                    padding-bottom: 4px;
-                    //background-image: linear-gradient($highlight-color 0 0);
-                    background-position: 0 100%;
-                    background-size: 0% 2px;
-                    background-repeat: no-repeat;
-                    transition:
-                        background-size 0.5s,
-                        background-position 0s 0.5s,
-                        width 0.5s;
+// Change grid styles
+@media only screen and (min-width: 2300px) {
+    .main-content-div .projects-container {
+        grid-template-columns: repeat(5, 19%);
+    }
+}
 
-                    width: 11vw;
-                    max-width: 200px;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    top: 0;
-                    left: 0;
+@media only screen and (max-width: 1850px) {
+    .main-content-div .projects-container {
+        grid-template-columns: repeat(3, 33%);
+    }
+}
 
-                    .options-slide {
-                        transform: translateX(-50px);
-                        opacity: 0;
-                        transition: all 400ms ease-in-out;
-                        margin-right: 4px;
+@media only screen and (max-width: 1300px) {
+    .main-content-div {
+
+        .projects-container {
+            grid-template-columns: repeat(2, 50%);
+            top: 0;
+            height: 95%;
+        }
+
+        .projects-nav-container {
+            display: none;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .main-content-div {
+
+        margin-top: 10%;
+        box-shadow: none;
+
+        .projects-container {
+            grid-template-columns: repeat(1, 100%);
+
+            .projects-image-container {
+
+                .overlay {
+                    opacity: 1 !important;
+                    background-color: rgba(18, 18, 18, 0);
+
+                    .title {
+
+                        font-size: 25px;
+                        transform: translate(0, 0);
+                        display: none;
                     }
 
-                    .icon {
-                        margin-right: 6px;
-                        color: $icon-color;
-                    }
+                    .learn-more-link {
 
-                    &:hover {
-                        background-position: 100% 100%;
-                        background-size: 100% 2px;
+                        margin-bottom: 20px;
+                        width: 70%;
+                        transform: translate(0, 0);
+                        background-color: $background-color;
                         color: $secondary-color;
 
-                        .options-slide {
-                            transform: translateX(0px);
-                            opacity: 1;
+                        &:hover {
+                            background-position: unset;
                         }
                     }
                 }
-
-
             }
         }
-    }
-}
 
-.slide-container {
-    position: absolute;
-    display: flex;
-    height: 91vh;
-    bottom: 0;
-    right: 0;
-    //border-radius: 25px 0 0 25px;
-    @include transition-all(300ms, linear);
-    z-index: 0;
-    justify-content: center;
-
-    .slide-text-container {
-        position: absolute;
-        color: $tertiary-color;
-        font-family: $primary-font;
-        font-weight: 300;
-        top: 40%;
-        left: 50%;
-        margin-top: 50px;
-
-        width: 5vh;
-        width: 1200px;
-        min-height: 600px;
-        max-height: 800px;
-
-        overflow: hidden;
-
-
-        @include transition-all;
-        transform: translate(-50%, -50%);
-        padding-left: 200px;
-
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
-        border-radius: 25px;
-
-        .slide-text-row-container {
-            display: flex;
-            flex-direction: row;
-            gap: 3em;
-            justify-content: center;
-
-            @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                padding: 60px;
-            }
-
-            .slide-github-container {
-                width: inherit;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-
-                .slide-text-github-link {
-                    text-decoration: none;
-                    color: $tertiary-color;
-                    font-size: 1.5vw;
-                    @include transition-all(100ms);
-
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-
-                    @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                        font-size: 1.8vh;
-                    }
-                }
-            }
-
-            .programming-language-ul {
-                width: inherit;
-                list-style: none;
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                padding: 0;
-                margin: 0;
-                gap: 2%;
-
-                margin-bottom: -15px;
-                margin-top: -15px;
-
-                @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                    gap: 40px;
-                    padding-bottom: 20px;
-                }
-
-                .programming-language {
-
-                    font-size: 1.2vw;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 20px;
-                    height: 30px;
-                    color: $icon-color; // Text color
-                }
-            }
-
-
-            .slide-text-header {
-                font-size: 2vw;
-                margin-top: 7vh;
-
-                @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                    margin-top: 4vh;
-                    font-size: 1.5vw;
-                  }
-            }
-
-            .slide-text-text {
-                font-size: 1vw;
-
-                @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                    font-size: 1.5vh;
-                }
-            }
-
-            .slide-text-container-image {
-                border: 4px solid $background-color;
-                width: 22vw;
-                height: 55vh;
-                max-width: 400px;
-                max-height: 550px;
-
-                float: right;
-                margin-right: 200px;
-                margin-top: 4vh;
-                border-radius: 25px;
-                background-size: cover;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
-                //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
-
-                @media screen and (min-width: 1921px) and (min-height: 1081px) {
-                    margin-top: 2vh;
-                }
-            }
-        }
     }
 
-    .slide-option-container {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 15vh;
-        bottom: 0;
-        gap: 1.5em;
-        list-style: none;
-        @include transition-all;
+    .test-width {
+        float: none !important;
+    }
 
-        .slide-option {
-            width: 200px;
-            height: 100px;
-            border: 4px solid $background-color;
-            border-radius: 25px;
-            overflow: hidden;
-            background-size: cover;
-            background-repeat: no-repeat;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
-            //background: url("https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png") center/cover;
-            @include transition-all(200ms, ease-in-out);
+    // modal stuff
 
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.05);
+    .projects-modal-full {
+        width: 100% !important;
 
-                .slide-option-over {
-                    opacity: 1;
+        .projects-modal {
 
-                    .slide-option-text {
-                        opacity: 1;
-                    }
-                }
+            height: 75vh !important;
+
+            transform: translate(-50%, -45%);
+
+            .projects-modal-image {
+
+                display: none;
             }
 
-            .slide-option-over {
-                width: inherit;
-                height: inherit;
-                background-color: rgba(0, 0, 0, 0.5);
-                opacity: 0;
-                @include transition-all(250ms, linear);
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .projects-modal-content {
+                width: 100% !important;
+                max-width: 80%;
 
-                .slide-option-text {
-                    color: $tertiary-color;
-                    font-family: $primary-font;
-                    font-weight: 500;
-                    font-size: 15px;
-                    opacity: 0;
-                    @include transition-all(400ms, linear);
+                .modal-title {
+                    font-size: 40px !important;
+                    margin-top: 45px !important;
+                }
+
+                .modal-icons {
+                    font-size: 16px !important;
+                }
+
+                .modal-description {
+
+                    font-size: 13px !important;
+                    padding: 0 !important;
+                    width: 100% !important;
+                }
+
+                .modal-github {
+
+                    font-size: 25px !important;
+                    margin-bottom: -20px;
+                    margin-top: 10px;
                 }
             }
         }
     }
 }
 
-// Apply gradients to containers
-/*
-.games-slide-container {
-    @include gradient-background($gradient1);
+
+// change modal stuff
+@media only screen and (max-width: 1500px) {
+    .projects-modal-full .projects-modal {
+        height: 60%;
+        width: 80%;
+    }
 }
 
-.website-slide-container {
-    @include gradient-background($gradient2);
-}
+@media only screen and (max-width: 1100px) {
+    .projects-modal-full .projects-modal {
+        height: 40%;
+        width: 90%;
 
-.software-slide-container {
-    @include gradient-background($gradient3);
-}
+        .modal-title {
+            font-size: 30px !important;
+            margin-top: 30px !important;
+        }
 
-.other-slide-container {
-    @include gradient-background($gradient4);
-}
-*/
-
-// Dynamic change for sliders and text
-.show-container {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible !important;
-    width: 100vw;
-}
-
-.hide-container {
-    opacity: 0;
-    transform: translateX(100%);
-    visibility: hidden !important;
-    width: 0vw;
-}
-
-.hide-container-end {
-    opacity: 0;
-    transform: translateX(100%);
-    visibility: hidden !important;
-    width: 0vw;
-}
-
-.show-text {
-    opacity: 1;
-    visibility: visible !important;
-}
-
-.hide-text {
-    opacity: 0;
-    visibility: hidden !important;
-}
-
-// Slide images
-
-/////////////////// GAMES /////////////////////
-/// 
-// MobContracts
-.slide-text-container-games-image-one {
-    background: url("https://i.ibb.co/hWZbC0R/Screenshot-2024-03-17-035803.png");
-}
-
-.slide-options-games-one {
-    background: url("https://i.ibb.co/ckdXPKP/Screenshot-2024-03-17-163549.png");
-    background-position: center;
-}
-
-// Periphery
-.slide-text-container-games-image-two {
-    background: url("https://i.ibb.co/sbvb0zZ/Screenshot-2024-03-17-051931.png");
-}
-
-.slide-options-games-two {
-    background: url("https://i.ibb.co/0BmBfPk/Screenshot-2024-03-17-163409.png");
-    background-position: center;
-    background-size: contain;
-}
-
-// MetroCore
-.slide-text-container-games-image-three {
-    background: url("https://i.ibb.co/9h7FcQM/Screenshot-2024-03-17-043328.png");
-    background-position: center;
-    background-size: cover;
-}
-
-.slide-options-games-three {
-    background: url("https://i.ibb.co/tKJ06Br/Screenshot-2024-03-17-203929.png");
-    background-position: center;
-    background-size: 10px;
-}
-
-// Project: Main menu
-.slide-text-container-games-image-four {
-    background: url("https://i.ibb.co/BntfqhY/Screenshot-2024-03-17-044432.png");
-    background-position: center;
-    background-size: contain;
-}
-
-.slide-options-games-four {
-    background: url("https://i.ibb.co/8Krk2fW/Screenshot-20230205-230339.png");
-    background-position: center;
-}
-
-// Asteroids
-.slide-text-container-games-image-five {
-    background: url("https://i.ibb.co/G9syq6z/Screenshot-2024-03-17-210048.png");
-    background-position: center;
-}
-
-.slide-options-games-five {
-    background: url("https://i.ibb.co/LN0MqF7/Screenshot-2024-03-17-205838.png");
-    background-position: center;
-    background-size: cover;
-}
-
-/////////////////// WEBSITES /////////////////////
-
-// My portfolio
-.slide-text-container-website-image-one {
-    background: url("https://i.ibb.co/1fZGZmY/Screenshot-2024-03-17-054130.png");
-}
-
-.slide-options-website-one {
-    background: url("https://i.ibb.co/qFwk4pz/Screenshot-2024-03-17-054036.png");
-    background-position: center;
-    background-size: cover;
-}
-
-// Jess
-.slide-text-container-website-image-two {
-    background: url("https://i.ibb.co/ggG6S1b/Screenshot-2024-03-17-172538.png");
-    background-position: center;
-}
-
-.slide-options-website-two {
-    background: url("https://i.ibb.co/smmHL36/Screenshot-2024-03-17-172409.png");
-    background-position: center;
-    background-size: cover;
-}
-
-// Pinksi
-.slide-text-container-website-image-three {
-    background: url("https://i.ibb.co/jDKsRK5/Screenshot-2024-03-17-164423.png");
-    background-position: center;
-}
-
-.slide-options-website-three {
-    background: url("https://i.ibb.co/PrP80hX/Screenshot-2024-03-17-164045.png");
-    background-position: center;
-    background-size: cover;
-}
-
-// Pesky
-.slide-text-container-website-image-four {
-    background: url("https://i.ibb.co/TqbWxfB/Screenshot-2024-03-17-175223.png");
-}
-
-.slide-options-website-four {
-    background: url("https://i.ibb.co/FXXrMFj/Screenshot-2024-03-17-175507.png");
-    background-size: cover;
-    background-position: center;
-}
-
-///////////////////// SOFTWARE /////////////////////
-
-// Cambot
-.slide-text-container-software-image-one {
-    background: url("https://i.ibb.co/3hvhQpL/Screenshot-2024-03-17-203617.png");
-}
-
-.slide-options-software-one {
-    background: url("https://i.ibb.co/m8Qrqvx/Screenshot-2024-03-17-201937.png");
-    background-position: center;
-}
-
-// Travelling salesman
-.slide-text-container-software-image-two {
-    background: url("https://i.ibb.co/gvWkv9H/Screenshot-2024-03-17-211450.png");
-    background-position: center;
-}
-
-.slide-options-software-two {
-    background: url("https://i.ibb.co/3v4KMhv/Screenshot-2024-03-17-211650.png");
-    background-position: center;
-    background-size: cover;
-}
-
-// Custom Maths
-.slide-text-container-other-image-one {
-    background: url("https://i.ibb.co/SKssTpD/Screenshot-2024-03-17-204302.png");
-    background-position: center;
-}
-
-.slide-options-other-one {
-    background: url("https://i.ibb.co/KNxc0PD/Screenshot-2024-03-17-204450.png");
-    background-position: left;
-    background-size: cover;
-}
-
-// AI pop
-.slide-text-container-other-image-two {
-    background: url("https://i.ibb.co/CzGXqVN/Screenshot-2024-03-20-013020.png");
-    background-position: center;
-}
-
-.slide-options-other-two {
-    background: url("https://i.ibb.co/5YVHX1V/Screenshot-2024-03-20-013222.png");
-    background-position: center;
+        .modal-icons {
+            font-size: 15px !important;
+        }
+    }
 }

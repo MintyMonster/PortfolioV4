@@ -1,0 +1,450 @@
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+  margin-top: 100px;
+  width: 100vw;
+  height: 75px;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  /*
+  .options-games {
+      background: url("https://user-images.githubusercontent.com/78669960/216851027-96166921-e206-4288-ad82-8463027bb45c.png");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+  }
+  */
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .options {
+    margin-top: 150px;
+  }
+}
+.options .options-list {
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+  z-index: inherit;
+  width: 100vw;
+}
+.options .options-list .options-list-li .options-list-link {
+  text-decoration: none;
+  color: #b8b7b8;
+  font-size: 1.1vw;
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .options .options-list .options-list-li .options-list-link {
+    font-size: 0.5vw;
+  }
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-games {
+  background-image: linear-gradient(#8e44ad 0 0);
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-games::after {
+  content: "Games projects";
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-website {
+  background-image: linear-gradient(#6c3483 0 0);
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-website::after {
+  content: "Website projects";
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-software {
+  background-image: linear-gradient(#663399 0 0);
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-software::after {
+  content: "Software projects";
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-other {
+  background-image: linear-gradient(#9370DB 0 0);
+}
+.options .options-list .options-list-li .options-list-link .options-list-div-other::after {
+  content: "University projects";
+}
+.options .options-list .options-list-li .options-list-link .options-list-div {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 4px;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s, background-position 0s 0.5s, width 0.5s;
+  width: 30vw;
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+}
+.options .options-list .options-list-li .options-list-link .options-list-div .options-slide {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  margin-right: 4px;
+}
+.options .options-list .options-list-li .options-list-link .options-list-div .icon {
+  margin-right: 6px;
+  color: #6a5acd;
+}
+.options .options-list .options-list-li .options-list-link .options-list-div:hover {
+  background-position: 100% 100%;
+  background-size: 100% 2px;
+  color: white;
+}
+.options .options-list .options-list-li .options-list-link .options-list-div:hover .options-slide {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.slide-container {
+  position: absolute;
+  display: flex;
+  height: 91vh;
+  bottom: 0;
+  right: 0;
+  transition: all 300ms linear;
+  z-index: 0;
+  justify-content: center;
+}
+.slide-container .slide-text-container {
+  position: absolute;
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  top: 40%;
+  left: 50%;
+  margin-top: 50px;
+  width: 5vh;
+  width: 1200px;
+  min-height: 600px;
+  max-height: 800px;
+  overflow: hidden;
+  transition: all 400ms ease-in-out;
+  transform: translate(-50%, -50%);
+  padding-left: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+}
+.slide-container .slide-text-container .slide-text-row-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  justify-content: center;
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-github-container {
+  width: inherit;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link {
+  text-decoration: none;
+  color: #b8b7b8;
+  font-size: 1.5vw;
+  transition: all 100ms ease-in-out;
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link:hover {
+  transform: scale(1.1);
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link {
+    font-size: 1.8vh;
+  }
+}
+.slide-container .slide-text-container .slide-text-row-container .programming-language-ul {
+  width: inherit;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  gap: 2%;
+  margin-bottom: -15px;
+  margin-top: -15px;
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .slide-container .slide-text-container .slide-text-row-container .programming-language-ul {
+    gap: 40px;
+    padding-bottom: 20px;
+  }
+}
+.slide-container .slide-text-container .slide-text-row-container .programming-language-ul .programming-language {
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 30px;
+  color: #6a5acd;
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-text-header {
+  font-size: 2vw;
+  margin-top: 7vh;
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .slide-container .slide-text-container .slide-text-row-container .slide-text-header {
+    margin-top: 4vh;
+    font-size: 1.5vw;
+  }
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-text-text {
+  font-size: 1vw;
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .slide-container .slide-text-container .slide-text-row-container .slide-text-text {
+    font-size: 1.5vh;
+  }
+}
+.slide-container .slide-text-container .slide-text-row-container .slide-text-container-image {
+  border: 4px solid #121212;
+  width: 22vw;
+  height: 55vh;
+  max-width: 400px;
+  max-height: 550px;
+  float: right;
+  margin-right: 200px;
+  margin-top: 4vh;
+  border-radius: 25px;
+  background-size: cover;
+  box-shadow: 0 5px 15px rgb(0, 0, 0), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .slide-container .slide-text-container .slide-text-row-container .slide-text-container-image {
+    margin-top: 2vh;
+  }
+}
+.slide-container .slide-option-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 15vh;
+  bottom: 0;
+  gap: 1.5em;
+  list-style: none;
+  transition: all 400ms ease-in-out;
+}
+.slide-container .slide-option-container .slide-option {
+  width: 200px;
+  height: 100px;
+  border: 4px solid #121212;
+  border-radius: 25px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 5px 15px rgb(0, 0, 0), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+  transition: all 200ms ease-in-out;
+}
+.slide-container .slide-option-container .slide-option:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.slide-container .slide-option-container .slide-option:hover .slide-option-over {
+  opacity: 1;
+}
+.slide-container .slide-option-container .slide-option:hover .slide-option-over .slide-option-text {
+  opacity: 1;
+}
+.slide-container .slide-option-container .slide-option .slide-option-over {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 250ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide-container .slide-option-container .slide-option .slide-option-over .slide-option-text {
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  opacity: 0;
+  transition: all 400ms linear;
+}
+
+/*
+.games-slide-container {
+    @include gradient-background($gradient1);
+}
+
+.website-slide-container {
+    @include gradient-background($gradient2);
+}
+
+.software-slide-container {
+    @include gradient-background($gradient3);
+}
+
+.other-slide-container {
+    @include gradient-background($gradient4);
+}
+*/
+.show-container {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible !important;
+  width: 100vw;
+}
+
+.hide-container {
+  opacity: 0;
+  transform: translateX(100%);
+  visibility: hidden !important;
+  width: 0vw;
+}
+
+.hide-container-end {
+  opacity: 0;
+  transform: translateX(100%);
+  visibility: hidden !important;
+  width: 0vw;
+}
+
+.show-text {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+.hide-text {
+  opacity: 0;
+  visibility: hidden !important;
+}
+
+@media only screen and (max-width: 100em) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .options {
+    width: 96vw;
+    z-index: 6;
+  }
+  .options .options-list {
+    gap: 0;
+  }
+  .options .options-list .options-list-li .options-list-link {
+    font-size: 10px;
+  }
+  .options .options-list .options-list-li .options-list-link .options-list-div-games::after {
+    content: "Games";
+  }
+  .options .options-list .options-list-li .options-list-link .options-list-div-website::after {
+    content: "Websites";
+  }
+  .options .options-list .options-list-li .options-list-link .options-list-div-software::after {
+    content: "Software";
+  }
+  .options .options-list .options-list-li .options-list-link .options-list-div-other::after {
+    content: "University";
+  }
+  .options .options-list .options-list-li .options-list-div {
+    width: 100px !important;
+  }
+  .body-overflow {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+  }
+  .slide-container {
+    position: absolute;
+    height: 70vh;
+    width: 97%;
+    margin-left: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .slide-container .slide-text-container {
+    width: 96vw;
+    height: 60vh;
+    box-shadow: none;
+    top: 0;
+    left: 0;
+    transform: none;
+    padding-left: 0;
+    text-align: center;
+    margin-top: -100px;
+    margin-left: 5px;
+    padding: 20px;
+    overflow: visible;
+  }
+  .slide-container .slide-text-container .slide-text-row-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: visible;
+  }
+  .slide-container .slide-text-container .slide-text-row-container .slide-text-row-left-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: visible;
+  }
+  .slide-container .slide-text-container .slide-text-row-container .slide-github-container {
+    width: 97vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide-container .slide-text-container .slide-text-row-container .slide-github-container .slide-text-github-link {
+    font-size: 20px;
+  }
+  .slide-container .slide-text-container .programming-language-ul {
+    width: 97vw;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+  .slide-container .slide-text-container .programming-language-ul .programming-language {
+    font-size: 20px !important;
+  }
+  .slide-container .slide-text-container .slide-text-header {
+    font-size: 10vw !important;
+    margin-top: 120px !important;
+  }
+  .slide-container .slide-text-container .slide-text-text {
+    font-size: 3vw !important;
+  }
+  .slide-container .slide-text-container .slide-text-container-image {
+    visibility: hidden;
+    display: none;
+  }
+  .slide-container .slide-option-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+    width: 97vw;
+    height: 100px;
+  }
+  .slide-container .slide-option-container .slide-option {
+    width: 75px;
+    height: 50px;
+    box-shadow: none;
+    border: 1px solid white;
+  }
+  .slide-container .slide-option-container .slide-option:hover .slide-option-over {
+    opacity: 0;
+  }
+  .slide-container .slide-option-container .slide-option:hover .slide-option-over .slide-option-text {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=projects.css.map */

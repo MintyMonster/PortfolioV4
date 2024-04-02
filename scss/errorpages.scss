@@ -1,0 +1,85 @@
+$background-color: #121212;
+$highlight-color: #c992f1;
+$secondary-color: white;
+$tertiary-color: #b8b7b8;
+
+$primary-font: "Lato", sans-serif;
+
+$gradient3: rgba(0, 0, 0, 0), #663399; // Royal purple
+
+
+.error-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    
+    .error-content-container {
+
+        height: 400px;
+        width: 1000px;
+        
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 25px;
+
+        gap: 1em;
+
+        .header {
+            color: $tertiary-color;
+            font-family: $primary-font;
+            font-size: 60px;
+            margin-top: 0;
+        }
+
+        .message {
+            font-size: 25px;
+            font-family: $primary-font;
+            color: $tertiary-color;
+
+            .fa-x {
+                color: red;
+                margin: 10px;
+            }
+        }
+
+        .return-contact {
+
+            color: $tertiary-color;
+            font-size: 25px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+            width: 130px;
+            height: 40px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            .return-link {
+
+                color: $tertiary-color;
+                text-decoration: none;
+                font-family: $primary-font;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+    }
+}

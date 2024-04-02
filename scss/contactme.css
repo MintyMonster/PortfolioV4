@@ -125,8 +125,35 @@ body {
   transition-delay: 1s;
 }
 
+.contact-error {
+  border-bottom: 1px solid #ED4337 !important;
+}
+
+.contact-success {
+  border-bottom: 1px solid #32de84 !important;
+}
+
 @media only screen and (max-width: 60em) {
-  .contact-container .header-container {
+  .full-contact-container {
+    width: 90vw;
+    height: 70vh;
+    margin-top: 400px;
+    top: 0;
+    gap: 1em !important;
+  }
+  .full-contact-container .header-container {
+    margin-top: -50px;
+  }
+  .full-contact-container .header-container .header {
+    font-size: 40px !important;
+  }
+  .full-contact-container .header-container .number {
+    font-size: 20px !important;
+  }
+  .full-contact-container .header-container .email {
+    font-size: 20px !important;
+  }
+  .full-contact-container .header-container {
     color: #b8b7b8;
     font-family: "Lato", sans-serif;
     display: flex;
@@ -138,13 +165,13 @@ body {
     padding: 0;
     gap: 2.5em;
   }
-  .contact-container .header-container .header {
+  .full-contact-container .header-container .header {
     font-size: 60px;
   }
-  .contact-container .header-container .number {
+  .full-contact-container .header-container .number {
     font-size: 25px;
   }
-  .contact-container .header-container .email {
+  .full-contact-container .header-container .email {
     font-size: 25px;
   }
 }/*# sourceMappingURL=contactme.css.map */

@@ -44,5 +44,13 @@ body {
         width: 10em;
         margin-top: 30px;
     }
+
+    @media only screen and (max-width: 60em){
+
+        //border: 1px solid white;
+        width: 90vw;
+        height: 60vh;
+        margin-top: 140px;
+    }
 }
 

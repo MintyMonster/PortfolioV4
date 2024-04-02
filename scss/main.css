@@ -184,26 +184,36 @@ body {
   color: white;
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 79em) {
   .navbar-container {
     display: none;
   }
   .logo-container {
-    display: none;
+    position: fixed;
+    width: 86vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 20;
+  }
+  .progress-overlay {
+    position: fixed !important;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .progress-overlay .progress-container {
+    width: 90vw;
   }
   .socials-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin-top: 25px;
-    z-index: 10;
+    display: none;
+    visibility: hidden;
   }
   .burger-container {
     display: flex;
-    margin-left: 10px;
+    margin-left: 0px;
   }
   .burger-container svg {
     fill-rule: evenodd;
@@ -257,7 +267,7 @@ body {
   }
   #responsive-menu {
     background-color: #121212;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -266,22 +276,53 @@ body {
     z-index: 9;
     overflow: hidden;
     transition: all 300ms linear;
+    top: 0;
+    left: 0;
   }
   #responsive-menu .responsive-navbar-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 2.5em;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    padding: 0;
   }
   #responsive-menu .responsive-navbar-list .responsive-navbar-link {
+    position: relative;
     text-align: center;
     font-size: 35px;
     font-family: "Lato", sans-serif;
+    width: 100vw;
     border-radius: 25px;
   }
   #responsive-menu .responsive-navbar-list .responsive-navbar-link a {
     text-decoration: none;
     color: #b8b7b8;
+  }
+  #responsive-menu .nav-socials-container {
+    position: fixed;
+    width: 80%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 75px;
+  }
+  #responsive-menu .nav-socials-container .nav-socials-li .nav-socials-link {
+    text-align: center;
+    position: relative;
+    font-size: 35px;
+    text-decoration: none;
+    color: #b8b7b8;
+    font-family: "Lato", sans-serif;
   }
   .show-burger {
     transform: translate(0);

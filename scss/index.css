@@ -27,4 +27,11 @@ body {
 .title-container .title-image {
   width: 10em;
   margin-top: 30px;
+}
+@media only screen and (max-width: 60em) {
+  .title-container {
+    width: 90vw;
+    height: 60vh;
+    margin-top: 140px;
+  }
 }/*# sourceMappingURL=index.css.map */

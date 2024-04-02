@@ -78,6 +78,16 @@ body {
 
         width: 100%;
 
+        // form {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     flex-direction: column;
+        //     gap: 1.5em;
+        //     margin-top: -30px;
+        //     width: 100%;
+        // }
+
         input[type=text], input[type=email], input[type=tel] {
             width: 70%;
             border: 0px;
@@ -163,9 +173,41 @@ body {
 
 }
 
+.contact-error {
+    border-bottom: 1px solid #ED4337 !important;
+}
+
+.contact-success {
+    border-bottom: 1px solid #32de84 !important;
+}
+
 @media only screen and (max-width: 60em) {
 
-    .contact-container {
+    .full-contact-container {
+
+        width: 90vw;
+        height: 70vh;
+        margin-top: 400px;
+        top: 0;
+
+        gap: 1em !important;
+
+        .header-container {
+
+            margin-top: -50px;
+
+            .header {
+                font-size: 40px !important;
+            }
+
+            .number {
+                font-size: 20px !important;
+            }
+
+            .email {
+                font-size: 20px !important;
+            }
+        }
 
         .header-container {
             color: $tertiary-color;
@@ -191,7 +233,6 @@ body {
                 font-size: 25px;
             }
         }
-
         
     }
 
