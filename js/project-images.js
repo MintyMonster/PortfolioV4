@@ -5,10 +5,9 @@ $(document).ready(function () {
         jsonData = data; // Store the JSON data in the variable
         $.each(data.images, function (index, item) {
             var grid = `
-            <div class="projects-image-container ${item.category}">
+            <div class="projects-image-container ${item.category} ${item.classname}">
                 <img src="${item['url-icon']}" alt="${item['name']} image" class="project-image">
                 <div class="overlay">
-                    <div class="title">${item['name']}</div>
                     <a href="#" class="learn-more-link" data-item-id="${item.id}">
                         <div class="learn-more">Learn more</div>
                     </a>

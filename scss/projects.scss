@@ -1,10 +1,13 @@
 $background-color: #121212;
 $highlight-color: #c992f1;
+$highlight-color-faded: rgba(201, 146, 241, 0.4);
 $secondary-color: white;
 $tertiary-color: #b8b7b8;
 $complimentary-color: #F1C992;
+$complimentary-color-faded: rgba(241, 201, 146, 0.4);
 
 $primary-font: "Lato", sans-serif;
+$secondary-font: "IBM Plex Mono", monospace;
 
 
 .main-content-div {
@@ -71,7 +74,7 @@ $primary-font: "Lato", sans-serif;
             }
 
             .projects-nav-spacer {
-                color: $tertiary-color;
+                color: $complimentary-color-faded;
                 font-family: $primary-font;
                 font-size: 20px;
                 text-align: center;
@@ -95,20 +98,32 @@ $primary-font: "Lato", sans-serif;
         height: 85%;
 
         display: grid;
-        grid-auto-rows: 33%;
-        grid-template-columns: repeat(4, 24%);
-        gap: 1em;
+        grid-auto-rows: 25%;
+        grid-template-columns: repeat(4, 23.3%);
+        gap: 1.5em;
 
         padding: 10px;
 
         overflow-y: auto;
 
+        .resize {
+            .project-image {
+                object-fit: contain !important;
+            }
+        }
+
         .projects-image-container {
             overflow: hidden;
             position: relative;
-            border-radius: 25px;
+
+            transition: box-shadow 500ms ease-in-out, transform 300ms ease-in;
+
 
             &:hover {
+
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 1), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+                transform: scale(1.03);
+
                 .overlay {
 
                     opacity: 1;
@@ -123,6 +138,34 @@ $primary-font: "Lato", sans-serif;
             }
 
             .overlay {
+
+                // &::before,
+                // &::after {
+                //     content: '';
+                //     position: absolute;
+                //     border-width: 2px; // Adjust the border thickness
+                //     border-style: solid;
+                // }
+
+                // &::before {
+                //     top: 0;
+                //     left: 0;
+                //     width: 10px; // Adjust the width of the border
+                //     height: 10px; // Adjust the height of the border
+                //     border-right-width: 0;
+                //     border-bottom-width: 0;
+                //     border-color: $complimentary-color-faded;
+                // }
+
+                // &::after {
+                //     bottom: 0;
+                //     right: 0;
+                //     width: 10px; // Adjust the width of the border
+                //     height: 10px; // Adjust the height of the border
+                //     border-left-width: 0;
+                //     border-top-width: 0;
+                //     border-color: $complimentary-color-faded;
+                // }
 
                 transition: .2s linear;
 
@@ -143,57 +186,96 @@ $primary-font: "Lato", sans-serif;
                 align-items: center;
                 text-align: center;
 
-                .title {
+                // .title {
 
-                    position: absolute;
+                //     position: absolute;
 
-                    color: $tertiary-color;
-                    font-family: $primary-font;
-                    font-size: 40px;
-                    width: 99%;
+                //     color: $tertiary-color;
+                //     font-family: $primary-font;
+                //     font-size: 40px;
+                //     width: 99%;
 
-                    top: 0;
+                //     top: 0;
 
-                    margin-top: 20px;
+                //     margin-top: 20px;
 
-                    transform: translate(0, -150%);
-                    transition: 250ms linear;
-                }
+                //     transform: translate(0, -150%);
+                //     transition: 250ms linear;
+                // }
 
                 .learn-more-link {
 
                     position: absolute;
-                    bottom: 0;
+                    top: 45%;
+                    left: 12%;
 
-                    width: 50%;
-                    margin-bottom: 30px;
+                    width: 75%;
 
                     color: $tertiary-color;
                     font-family: $primary-font;
-                    font-size: 25px;
+                    font-size: 20px;
 
                     transform: skew(-10deg);
-                    border: 1px solid white;
+                    //border: 1px solid white;
 
                     text-decoration: none;
 
                     vertical-align: middle;
+                    text-transform: uppercase;
 
                     // Slide left to right
-                    background: linear-gradient(to right, $highlight-color 50%, rgba(18, 18, 18, 0) 50%);
-                    background-size: 200% 100%;
-                    background-position: right bottom;
-                    transition: all 250ms linear;
+                    // background: linear-gradient(to right, $highlight-color 50%, rgba(18, 18, 18, 0) 50%);
+                    // background-size: 200% 100%;
+                    // background-position: right bottom;
+                    // transition: all 250ms linear;
 
-                    transform: translate(0, 200%);
+                    // transform: translate(0, 200%);
 
-                    .learn-more {
-                        transform: skew(-10deg);
+                    transition: letter-spacing 100ms linear, background-color 200ms linear;
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        border-width: 2px; // Adjust the border thickness
+                        border-style: solid;
+                        transition: width 300ms ease-out, height 300ms ease-out;
+                        border-color: $highlight-color;
+                    }
+
+                    &::before {
+                        top: 0;
+                        left: 0;
+                        width: 10px; // Adjust the width of the border
+                        height: 10px; // Adjust the height of the border
+                        border-right-width: 0;
+                        border-bottom-width: 0;
+                    }
+
+                    &::after {
+                        bottom: 0;
+                        right: 0;
+                        width: 10px; // Adjust the width of the border
+                        height: 10px; // Adjust the height of the border
+                        border-left-width: 0;
+                        border-top-width: 0;
                     }
 
                     &:hover {
-                        color: $background-color;
+                        color: white;
                         background-position: left bottom;
+                        letter-spacing: 5px;
+                        border: unset;
+
+                        &::before {
+                            width: 99%;
+                            height: 90%;
+                        }
+
+                        &::after {
+                            width: 99%;
+                            height: 90%;
+                        }
                     }
                 }
 
@@ -262,25 +344,26 @@ $primary-font: "Lato", sans-serif;
             position: absolute;
             border-width: 2px; // Adjust the border thickness
             border-style: solid;
-            border-color: $complimentary-color;
         }
 
         &::before {
             top: 0;
             left: 0;
-            width: 15%; // Adjust the width of the border
-            height: 100%; // Adjust the height of the border
+            width: 100px; // Adjust the width of the border
+            height: 100px; // Adjust the height of the border
             border-right-width: 0;
             border-bottom-width: 0;
+            border-color: $complimentary-color-faded;
         }
 
         &::after {
             bottom: 0;
             right: 0;
-            width: 15%; // Adjust the width of the border
-            height: 100%; // Adjust the height of the border
+            width: 100px; // Adjust the width of the border
+            height: 100px; // Adjust the height of the border
             border-left-width: 0;
             border-top-width: 0;
+            border-color: $highlight-color-faded;
         }
 
         .projects-modal-image {
@@ -456,6 +539,17 @@ $primary-font: "Lato", sans-serif;
                         transform: translate(0, 0);
                         background-color: $background-color;
                         color: $secondary-color;
+                        letter-spacing: 5px !important;
+                        border: 1px solid $highlight-color;
+
+                        top: unset;
+                        left: unset;
+                        bottom: 0;
+
+                        &::before, &::after {
+                            width: 0;
+                            height: 0;
+                        }
 
                         &:hover {
                             background-position: unset;

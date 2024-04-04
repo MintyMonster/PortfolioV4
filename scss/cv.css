@@ -1,197 +1,658 @@
-/*
-body {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
-}
-*/
 .cv-container {
-  position: absolute;
-  width: 80vw;
+  width: 75vw;
   height: 75vh;
-  max-width: 1550px;
-  max-height: 750px;
-  border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+  position: absolute;
   top: 50%;
   left: 50%;
-  margin: auto;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #b8b7b8;
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  gap: 7em;
-}
-.cv-container .work-educ-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: inherit;
-}
-.cv-container .work-educ-container .work-container,
-.cv-container .work-educ-container .education-container {
-  padding: 40px;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  top: 0;
-  left: 0;
-  margin-top: 100px;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-  transition: opacity 300ms linear;
-}
-.cv-container .work-educ-container .work-container .work-box-container,
-.cv-container .work-educ-container .work-container .education-box-container,
-.cv-container .work-educ-container .education-container .work-box-container,
-.cv-container .work-educ-container .education-container .education-box-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  top: 0;
-  left: 0;
-  text-align: center;
-  width: 16vw;
-  height: 45vh;
-  max-width: 300px;
-  max-height: 500px;
-  padding: 20px;
   box-shadow: 0 5px 15px rgb(0, 0, 0), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
   border-radius: 25px;
-  overflow: hidden;
-  transition: all 300ms linear;
-  font-size: 14px;
-}
-.cv-container .work-educ-container .work-container .work-box-container:hover,
-.cv-container .work-educ-container .work-container .education-box-container:hover,
-.cv-container .work-educ-container .education-container .work-box-container:hover,
-.cv-container .work-educ-container .education-container .education-box-container:hover {
-  transform: scale(1.1);
-}
-.cv-container .cv-nav-container {
-  position: absolute;
-  width: inherit;
-  height: 50px;
-  max-width: 1550px;
-  max-height: 50px;
-  list-style: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.cv-container .cv-content-container {
+  width: 95%;
+  height: 90%;
+  display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.cv-container .cv-content-container .scroll-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container,
+.cv-container .cv-content-container .scroll-box .cv-education-container {
+  opacity: 0;
+  width: 95%;
+  height: 85%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-auto-rows: 50%;
+  gap: 1.5em;
+  padding: 20px;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  border-radius: 25px;
+  gap: 1em;
+  transition: opacity 700ms linear;
+  position: relative;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-one,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-one,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-one,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-one,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-one,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-one,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-one,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-one {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 700ms linear;
+  width: 100%;
+  height: 100%;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-one::before, .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-one::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-one::after {
+  content: "";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(201, 146, 241, 0.4);
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-one::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-one::before {
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-one::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-one::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-one::after {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
+  width: 60px;
+  height: 60px;
+  border-right-width: 0;
+  border-bottom-width: 0;
 }
-.cv-container .cv-nav-container .cv-nav-link {
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-two::before, .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-two::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-two::after {
+  content: "";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(241, 201, 146, 0.4);
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-two::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-two::before {
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-two::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-two::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-two::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  height: 15%;
+  border-right-width: 0;
+  border-top-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-three::before, .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-three::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-three::after {
+  content: "";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(241, 201, 146, 0.4);
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-three::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-three::before {
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-three::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-three::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-three::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-right-width: 0;
+  border-top-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-four::before, .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-four::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-four::after {
+  content: "";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(201, 146, 241, 0.4);
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-four::before,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-four::before {
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-four::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-four::after,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-four::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 15%;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .employment-header,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .employment-header,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .employment-header,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .employment-header {
+  width: 70%;
+  height: 25%;
+  position: inherit;
+  font-size: 35px;
+  color: white;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .education-header,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .education-header,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .education-header,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .education-header {
+  width: 70%;
+  height: 20%;
+  position: inherit;
+  font-size: 35px;
+  color: white;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .employment-description,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .employment-description,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .employment-description,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .employment-description {
+  width: 90%;
+  height: 50%;
+  font-size: 0.7vw;
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .education-description,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .education-description,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .education-description,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .education-description {
+  width: 90%;
+  height: 75%;
+  font-size: 0.6vw;
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+}
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .employment-date,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .education-date,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .employment-date,
+.cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .education-date,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .employment-date,
+.cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .education-date,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .employment-date,
+.cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .education-date {
+  width: 90%;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "IBM Plex Mono", monospace;
+  color: #b8b7b8;
+  font-size: 1vw;
+  margin-top: 15px;
+}
+.cv-container .cv-content-container .cv-skills-container {
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  margin-bottom: 50px;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container {
+  width: 70%;
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container .left-header {
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-size: 45px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container .progress-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 90%;
+  margin-top: 5px;
+  opacity: 0;
+  margin-left: 50px;
+  transition: all 300ms linear;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container .progress-container span {
+  display: block;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container .progress-container .progress-name {
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  margin-right: 15px;
+  width: 50px;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container .progress-container .progress-bar {
+  position: inherit;
+  right: 0;
+  width: 80%;
+  height: 10px;
+  overflow: hidden;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-left-container .progress-container .progress-bar .progress {
+  width: 0%;
+  background: rgb(201, 146, 241);
+  background: linear-gradient(90deg, rgba(201, 146, 241, 0.5004202365) 30%, rgba(2, 0, 36, 0) 100%, rgba(43, 0, 116, 0) 100%);
+  height: 10px;
+  transition: width 700ms ease-out;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5em;
+  width: 30%;
+  height: 100%;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container-border-show::before {
+  border-color: rgba(201, 146, 241, 0.4) !important;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container-border-show::after {
+  border-color: rgba(241, 201, 146, 0.4) !important;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.8em;
+  padding: 20px;
+  position: relative;
+  opacity: 0;
+  transition: all 400ms linear;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container .border-container {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.8em;
+  padding: 20px;
+  position: absolute;
+  transition: all 400ms linear;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container .border-container::before {
+  content: "";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(201, 146, 241, 0.4);
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container .border-container::after {
+  content: "";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(241, 201, 146, 0.4);
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container .border-container::before {
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 30%;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container .border-container::after {
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 30%;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+.cv-container .cv-content-container .cv-skills-container .skills-content-right-container .skills-container .skill {
+  font-family: "Lato", sans-serif;
+  color: #b8b7b8;
   font-size: 20px;
-  font-weight: 400;
-  margin-right: 10px;
+  opacity: 0;
+  transition: all 300ms linear;
 }
-.cv-container .cv-nav-container .cv-nav-link .cv-nav-work,
-.cv-container .cv-nav-container .cv-nav-link .cv-nav-education {
+.cv-container .cv-navbar-container {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: inherit;
+}
+.cv-container .cv-navbar-container .cv-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 1.5em;
+  margin-top: 15px;
+  margin-left: 0;
+  padding: 0;
+}
+.cv-container .cv-navbar-container .cv-nav .cv-nav-link {
   text-decoration: none;
   color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  padding: 0 5px 5px 5px;
+  background-image: linear-gradient(#c992f1 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s, background-position 0s 0.5s;
 }
-.cv-container .cv-nav-container .cv-nav-link .cv-nav-work:hover,
-.cv-container .cv-nav-container .cv-nav-link .cv-nav-education:hover {
-  cursor: pointer;
+.cv-container .cv-navbar-container .cv-nav .cv-nav-link:hover {
   color: white;
+  background-position: 100% 100%;
+  background-size: 100% 2px;
 }
-.cv-container .cv-nav-container .cv-nav-link .fa-solid {
-  color: #6a5acd;
-}
-
-.show-text {
-  opacity: 1;
-  visibility: visible !important;
-}
-
-.hide-text {
-  opacity: 0;
-  visibility: hidden !important;
+.cv-container .cv-navbar-container .cv-nav .cv-nav-spacer {
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-align: center;
 }
 
-@media only screen and (max-width: 100em) {
+@media only screen and (max-width: 1500px) {
+  .cv-skills-container .skills-content-left-container {
+    width: 50% !important;
+  }
+  .cv-skills-container .skills-content-left-container .progress-container {
+    width: 100% !important;
+  }
+  .cv-skills-container .skills-content-left-container .progress-container .progress-bar {
+    width: 100% !important;
+  }
+  .cv-skills-container .skills-content-right-container {
+    width: 50% !important;
+  }
+}
+@media only screen and (max-width: 1100px) {
   body {
-    overflow-y: scroll !important;
+    overflow: auto !important;
+    width: 100% !important;
   }
   .cv-container {
-    width: 90vw;
-    height: 1950px;
-    max-width: none;
-    max-height: none;
-    margin: 150px 0px 0px 5vw;
-    top: 0;
+    box-shadow: none;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 0;
+  }
+  .cv-container .cv-navbar-container .cv-nav {
+    gap: 1em !important;
+  }
+  .cv-container .cv-navbar-container .cv-nav .cv-nav-link {
+    font-size: 16px;
+  }
+  .cv-container .cv-content-container {
     left: 0;
-    transform: none;
   }
-  .cv-container .work-educ-container {
-    display: grid;
-    flex-direction: column;
+  .cv-container .cv-content-container .scroll-box .cv-employment-container,
+  .cv-container .cv-content-container .scroll-box .cv-education-container {
+    grid-template-columns: repeat(1, 100%) !important;
+    padding: unset;
+    width: 100%;
+    margin-left: 30px;
   }
-  .cv-container .work-educ-container .work-container,
-  .cv-container .work-educ-container .education-container {
-    flex-direction: column;
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box {
+    border-bottom: 1px solid rgba(201, 146, 241, 0.4);
+    border-top: 1px solid rgba(241, 201, 146, 0.4);
   }
-  .cv-container .work-educ-container .work-container .work-box-container,
-  .cv-container .work-educ-container .work-container .education-box-container,
-  .cv-container .work-educ-container .education-container .work-box-container,
-  .cv-container .work-educ-container .education-container .education-box-container {
-    position: relative;
-    width: 75vw;
-    max-width: none;
-    margin-left: -20px;
-    padding: 10px;
-    transition: all 300ms ease-in-out;
-    border: 1px solid white;
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-one,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-two,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-three,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-education-four,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-one,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-two,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-three,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .border-container-employment-four,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-one,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-two,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-three,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-education-four,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-one,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-two,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-three,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .border-container-employment-four,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-one,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-two,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-three,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-education-four,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-one,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-two,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-three,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .border-container-employment-four,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-one,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-two,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-three,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-education-four,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-one,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-two,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-three,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .border-container-employment-four {
+    opacity: 0 !important;
   }
-  .cv-container .work-educ-container .work-container .work-box-container:hover,
-  .cv-container .work-educ-container .work-container .education-box-container:hover,
-  .cv-container .work-educ-container .education-container .work-box-container:hover,
-  .cv-container .work-educ-container .education-container .education-box-container:hover {
-    transform: none;
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .employment-description,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .education-description,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .employment-description,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .education-description,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .employment-description,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .education-description,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .employment-description,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .education-description {
+    font-size: 1.3vw;
   }
-  .cv-container .work-educ-container .work-container .work-one-container,
-  .cv-container .work-educ-container .education-container .work-one-container {
-    height: 420px;
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .employment-header, .cv-container .cv-content-container .scroll-box .cv-employment-container .employment-grid-box .education-header,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .employment-header,
+  .cv-container .cv-content-container .scroll-box .cv-employment-container .education-grid-box .education-header,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .employment-header,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .employment-grid-box .education-header,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .employment-header,
+  .cv-container .cv-content-container .scroll-box .cv-education-container .education-grid-box .education-header {
+    font-size: 4vw;
   }
-  .cv-container .work-educ-container .work-container .work-two-container,
-  .cv-container .work-educ-container .education-container .work-two-container {
-    height: 390px;
+  .cv-container .cv-skills-container {
+    flex-direction: column !important;
+    margin-bottom: unset !important;
+    height: 80%;
+    gap: 2em;
   }
-  .cv-container .work-educ-container .work-container .work-three-container,
-  .cv-container .work-educ-container .education-container .work-three-container {
-    height: 350px;
+  .cv-container .cv-skills-container .skills-content-left-container {
+    margin-top: 350px;
+    width: 100% !important;
+    padding: unset;
   }
-  .cv-container .work-educ-container .work-container .work-four-container,
-  .cv-container .work-educ-container .education-container .work-four-container {
-    height: 350px;
+  .cv-container .cv-skills-container .skills-content-right-container {
+    width: 100% !important;
+    margin-left: 30px;
   }
-  .cv-container .work-educ-container .work-container .education-one-container,
-  .cv-container .work-educ-container .education-container .education-one-container {
-    height: 280px;
+}
+@media only screen and (max-width: 650px) {
+  .employment-description,
+  .education-description {
+    font-size: 2vw !important;
   }
-  .cv-container .work-educ-container .work-container .education-two-container,
-  .cv-container .work-educ-container .education-container .education-two-container {
-    height: 280px;
-  }
-  .cv-container .work-educ-container .work-container .education-three-container,
-  .cv-container .work-educ-container .education-container .education-three-container {
-    height: 350px;
-  }
-  .cv-container .work-educ-container .work-container .education-four-container,
-  .cv-container .work-educ-container .education-container .education-four-container {
-    height: 440px;
-  }
-  .cv-container .cv-nav-container {
-    width: 80%;
+  .employment-date, .education-date {
+    font-size: 1.8vw !important;
   }
 }/*# sourceMappingURL=cv.css.map */

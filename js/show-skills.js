@@ -87,7 +87,7 @@ $(document).ready(function () {
         });
 
         borderContainers.forEach((container, index) => {
-            setTimeout(() => $(container).css('opacity', 1), 600 + index * 200);
+            setTimeout(() => $(container).css('opacity', 1), 600 + index * 250);
         });
     }
 
@@ -105,7 +105,7 @@ $(document).ready(function () {
         });
 
         borderContainers.forEach((container, index) => {
-            setTimeout(() => $(container).css('opacity', 1), 450 + index * 200);
+            setTimeout(() => $(container).css('opacity', 1), 450 + index * 250);
         });
     }
 

@@ -3,6 +3,7 @@
         {
             "id": "1",
             "name": "MobContracts",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/hWZbC0R/Screenshot-2024-03-17-035803.png",
             "url-icon": "https://i.ibb.co/ckdXPKP/Screenshot-2024-03-17-163549.png",
             "description": "MobContracts was a Minecraft plugin that I spent countless hours working on. This was a self-assigned project to practice using Java and other technologies. It eventually spiraled into becoming a full-time project in which there was a final goal - creating the best boss-based Mob plugin out there! It consisted of custom-created GUIs, multiple databases and even integration of other plugins to work with them. A couple of key features I created was custom messages, prefixes, events and effects. It also included a database to go alongside the 'profile' portion of the plugin in which players could view their own, as well as other player's progression through the bosses. It also included a fully customisable configuration file where server admins could add their own unique twist to things. Changing everything they possible could from colours, to full move-sets. This was a project I was most proud of.",
@@ -17,6 +18,7 @@
         {
             "id": "2",
             "name": "Periphery",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/sbvb0zZ/Screenshot-2024-03-17-051931.png",
             "url-icon": "https://i.ibb.co/0BmBfPk/Screenshot-2024-03-17-163409.png",
             "description": "Periphery was a group-based university project in which students were tasked to create a game using a special technology some of which included VR headsets and special controllers. We decided to use an eye-tracker called Tobii. We utilised this to create a game where you have to ensure you're always looking away from the monster, otherwise it would start tracking you. We preyed on the natural human urge to look at anything that's moving, especially in people's peripherals. The game included two monsters. One slow, one fast. The player had to complete puzzles to complete the game, without the monster catching them. The monster also had noise and proximity checks. I was tasked with all of the monster's AI. Ensuring it worked smoothly and effectively. We were voted best game concept for multiple weeks in a row, but sadly didn't make it to the games convention. ",
@@ -31,6 +33,7 @@
         {
             "id": "3",
             "name": "MetroCore",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/9h7FcQM/Screenshot-2024-03-17-043328.png",
             "url-icon": "https://i.ibb.co/tKJ06Br/Screenshot-2024-03-17-203929.png",
             "description": "MetroCore was another plugin written for Minecraft, however, this one was server specific. I was approached by a friend of mine who had been supporting me through my Java journey asking to create a Minecraft plugin for his server that would be set to replace the ever popular 'Essentials' plugin. The plugin included commands such as /admin and /mod to enable or disabled mod or admin mode which allowed different permissions, as well as, a full reporting and suggestion system all linked to multiple databases that worked asynchronously to ensure it worked fluidly alongside other plugins. It also included discord integration that would allow players in-game to talk on Discord too, and visa versa.",
@@ -46,6 +49,7 @@
         {
             "id": "4",
             "name": "Project: Main Menu",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/BntfqhY/Screenshot-2024-03-17-044432.png",
             "url-icon": "https://i.ibb.co/8Krk2fW/Screenshot-20230205-230339.png",
             "description": "This project was also part of a University assignment that was set in which we had to demonstrate our use of visual programming and C++ in Unreal Engine to create a visually appealing, but function main-menu system. I chose to go for a dark, moody main menu that could be used on a horror game or a game that used a lot of suspense. It utilised a video for the background which was raining, as well as the use of blurring to focus. It also included an achievements tab that included tooltips. ",
@@ -60,6 +64,7 @@
         {
             "id": "5",
             "name": "Asteroids",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/G9syq6z/Screenshot-2024-03-17-210048.png",
             "url-icon": "https://i.ibb.co/LN0MqF7/Screenshot-2024-03-17-205838.png",
             "description": "PlayBuffer is an open source C++ library for making simple two dimensional games inside Windows console. Basically, it's a game engine to run in command line. It was brought to our attention by my University tutor as one of the options for our 2D game assignment. As someone who had barely worked in C++ prior to this, I found this both challenging but interesting. I found it an interesting and informative way of teaching myself the basics of C++, whilst also completing the assignment set. I created asteroids, a game I thoroughly enjoyed playing when I was younger.",
@@ -73,6 +78,7 @@
         {
             "id": "6",
             "name": "My portfolio",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/1fZGZmY/Screenshot-2024-03-17-054130.png",
             "url-icon": "https://i.ibb.co/qFwk4pz/Screenshot-2024-03-17-054036.png",
             "description": "To me, my portfolio is where I can express myself. I can use my favourite colours, favourite fonts and fully customise it exactly how I want it to be. I have full creative freedom in my portfolio. However, like any other project I do, I set myself a challenge and wanted to experience PHP a little more than I have done previously. With this challenge, I successfully incorporated a fully-functional contact form that uses jQuery and PHP.",
@@ -92,6 +98,7 @@
         {
             "id": "7",
             "name": "Jess Medway photography",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/ggG6S1b/Screenshot-2024-03-17-172538.png",
             "url-icon": "https://i.ibb.co/smmHL36/Screenshot-2024-03-17-172409.png",
             "description": "Jessica Medway is a student at the University of Gloucestershire, studying photography. This website project is now deprecated and is no longer live, however, upon approaching me she asked for a website to display all of her photographs. The website uses a masonry style layout for the images, as well as a rotating slide show in which the user can select different genres of photographs.",
@@ -108,6 +115,7 @@
         {
             "id": "8",
             "name": "Pinksi",
+            "classname": "normal",
             "url-full": "https://i.ibb.co/jDKsRK5/Screenshot-2024-03-17-164423.png",
             "url-icon": "https://i.ibb.co/PrP80hX/Screenshot-2024-03-17-164045.png",
             "description": "This website is a portfolio for Cara Lymath, an illustrator at the University of Gloucestershire. She asked for a simple, yet effective website in which she could display her illustrative prowess. Soft greens, white and dark greys were her colours of choice to ensure that the actual portfolio pieces featured popped out. The website includes a home page, about-me, portfolio and contact section. However, this is currently a work in progress.",
@@ -124,8 +132,9 @@
         {
             "id": "9",
             "name": "PeskyPigs",
+            "classname": "resize",
             "url-full": "https://i.ibb.co/TqbWxfB/Screenshot-2024-03-17-175223.png",
-            "url-icon": "https://i.ibb.co/FXXrMFj/Screenshot-2024-03-17-175507.png",
+            "url-icon": "https://i.ibb.co/hHwGDch/PESKYPIGS-LOGO.png",
             "description": "Pesky pigs was an entirely new style of website for me. Myself, and a group of friends, decided to create our own NFTs. I was in charge of making the website. The format for the website was a grid to show all of the different NFTs as well as the correct links to social medias. The site also included minting and OpenSea integration. ",
             "github": "https://github.com/MintyMonster/PeskyWeb",
             "icons": [
@@ -138,7 +147,7 @@
         {
             "id": "10",
             "name": "Cambot",
-            "url-full": "https://i.ibb.co/3hvhQpL/Screenshot-2024-03-17-203617.png",
+            "url-full": "https://i.ibb.co/XZP9D08/Screenshot-2024-04-04-051222.png",
             "url-icon": "https://i.ibb.co/m8Qrqvx/Screenshot-2024-03-17-201937.png",
             "description": "Cambot is my second Discord bot project. It first started as a Discord bot with nothing but random API calls, such as Dad Jokes and Dog images. However, it quickly became a project I was passionate about. This is the third iteration of Cambot, and is currently still under development. The new bot also included mini-games, educational commands, a full levelling system and much more! The bot was also built to be run on a RasperryPi. Plenty use of optimisation techniques, alongside efficient programming allows there to be no issue running on a computer so small. Cambot is currently in the midst of being worked on, and optimised further, and will hopefully be back live soon!",
             "github": "https://github.com/MintyMonster/Cambot-3.0/tree/main",
@@ -154,8 +163,9 @@
         {
             "id": "11",
             "name": "Travelling salesman",
+            "classname": "resize",
             "url-full": "https://i.ibb.co/gvWkv9H/Screenshot-2024-03-17-211450.png",
-            "url-icon": "https://i.ibb.co/3v4KMhv/Screenshot-2024-03-17-211650.png",
+            "url-icon": "https://i.ibb.co/MNng994/TS-LOGO.png",
             "description": "One of my optional modules at University was optimisation algorithms. We got the chance to choose what algorithm we used, and thus I chose the travelling salesman challenge. We were also required to use Python. Algorithms are something that I find interesting and would love to work on further in the future.",
             "github": "https://github.com/MintyMonster/Optimisation_TravellingSalesman/tree/main",
             "icons": [
@@ -167,8 +177,9 @@
         {
             "id": "12",
             "name": "Custom Maths Library",
+            "classname": "resize",
             "url-full": "https://i.ibb.co/SKssTpD/Screenshot-2024-03-17-204302.png",
-            "url-icon": "https://i.ibb.co/KNxc0PD/Screenshot-2024-03-17-204450.png",
+            "url-icon": "https://i.ibb.co/3Ckvv51/CML-LOGO.png",
             "description": "This project was a University project, however, it's something that I thoroughly enjoyed. We were set the task of creating a custom maths library in which we can use to work alongside the Unity physics engine. Some examples would be custom vectors, all the way up to 4 dimensional, as well as, all of the functions that co-inside with Vectors and other. The main part of the assignment was using it for a tower defence style game where the projectiles would use the custom library. However, this portfolio piece is more to outline the Maths library.",
             "github": "https://github.com/MintyMonster/CustomMathsAndVectors/blob/main/UnityTanksMathsLibrary/Assets/Scripts/MathsCustomLibrary.cs",
             "icons": [
@@ -181,8 +192,9 @@
         {
             "id": "13",
             "name": "AI Population Simulation",
+            "classname": "resize",
             "url-full": "https://i.ibb.co/CzGXqVN/Screenshot-2024-03-20-013020.png",
-            "url-icon": "https://i.ibb.co/5YVHX1V/Screenshot-2024-03-20-013222.png",
+            "url-icon": "https://i.ibb.co/f9JGB6C/AI-POP-LOGO.png",
             "description": "A University assignment where we were tasked to use two seperate types of AI to create a predator VS prey style simulation. The predator should hunt the prey, and the prey should be run away from the predator. Prey were also needed to 'breed' to pass down genes gained throughout the previous generations life. I found this particularly hard due to my lack of AI knowledge, however, I found it a good starting point to learning more about the ins and outs of AI creation and training.",
             "github": "",
             "icons": [

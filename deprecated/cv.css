@@ -1,0 +1,197 @@
+/*
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
+}
+*/
+.cv-container {
+  position: absolute;
+  width: 80vw;
+  height: 75vh;
+  max-width: 1550px;
+  max-height: 750px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #b8b7b8;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  gap: 7em;
+}
+.cv-container .work-educ-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+}
+.cv-container .work-educ-container .work-container,
+.cv-container .work-educ-container .education-container {
+  padding: 40px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  transition: opacity 300ms linear;
+}
+.cv-container .work-educ-container .work-container .work-box-container,
+.cv-container .work-educ-container .work-container .education-box-container,
+.cv-container .work-educ-container .education-container .work-box-container,
+.cv-container .work-educ-container .education-container .education-box-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 16vw;
+  height: 45vh;
+  max-width: 300px;
+  max-height: 500px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0), 0 10px 20px rgba(0, 0, 0, 0.8), 0 15px 25px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 300ms linear;
+  font-size: 14px;
+}
+.cv-container .work-educ-container .work-container .work-box-container:hover,
+.cv-container .work-educ-container .work-container .education-box-container:hover,
+.cv-container .work-educ-container .education-container .work-box-container:hover,
+.cv-container .work-educ-container .education-container .education-box-container:hover {
+  transform: scale(1.1);
+}
+.cv-container .cv-nav-container {
+  position: absolute;
+  width: inherit;
+  height: 50px;
+  max-width: 1550px;
+  max-height: 50px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+}
+.cv-container .cv-nav-container .cv-nav-link {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.cv-container .cv-nav-container .cv-nav-link .cv-nav-work,
+.cv-container .cv-nav-container .cv-nav-link .cv-nav-education {
+  text-decoration: none;
+  color: #b8b7b8;
+}
+.cv-container .cv-nav-container .cv-nav-link .cv-nav-work:hover,
+.cv-container .cv-nav-container .cv-nav-link .cv-nav-education:hover {
+  cursor: pointer;
+  color: white;
+}
+.cv-container .cv-nav-container .cv-nav-link .fa-solid {
+  color: #6a5acd;
+}
+
+.show-text {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+.hide-text {
+  opacity: 0;
+  visibility: hidden !important;
+}
+
+@media only screen and (max-width: 100em) {
+  body {
+    overflow-y: scroll !important;
+  }
+  .cv-container {
+    width: 90vw;
+    height: 1950px;
+    max-width: none;
+    max-height: none;
+    margin: 150px 0px 0px 5vw;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  .cv-container .work-educ-container {
+    display: grid;
+    flex-direction: column;
+  }
+  .cv-container .work-educ-container .work-container,
+  .cv-container .work-educ-container .education-container {
+    flex-direction: column;
+  }
+  .cv-container .work-educ-container .work-container .work-box-container,
+  .cv-container .work-educ-container .work-container .education-box-container,
+  .cv-container .work-educ-container .education-container .work-box-container,
+  .cv-container .work-educ-container .education-container .education-box-container {
+    position: relative;
+    width: 75vw;
+    max-width: none;
+    margin-left: -20px;
+    padding: 10px;
+    transition: all 300ms ease-in-out;
+    border: 1px solid white;
+  }
+  .cv-container .work-educ-container .work-container .work-box-container:hover,
+  .cv-container .work-educ-container .work-container .education-box-container:hover,
+  .cv-container .work-educ-container .education-container .work-box-container:hover,
+  .cv-container .work-educ-container .education-container .education-box-container:hover {
+    transform: none;
+  }
+  .cv-container .work-educ-container .work-container .work-one-container,
+  .cv-container .work-educ-container .education-container .work-one-container {
+    height: 420px;
+  }
+  .cv-container .work-educ-container .work-container .work-two-container,
+  .cv-container .work-educ-container .education-container .work-two-container {
+    height: 390px;
+  }
+  .cv-container .work-educ-container .work-container .work-three-container,
+  .cv-container .work-educ-container .education-container .work-three-container {
+    height: 350px;
+  }
+  .cv-container .work-educ-container .work-container .work-four-container,
+  .cv-container .work-educ-container .education-container .work-four-container {
+    height: 350px;
+  }
+  .cv-container .work-educ-container .work-container .education-one-container,
+  .cv-container .work-educ-container .education-container .education-one-container {
+    height: 280px;
+  }
+  .cv-container .work-educ-container .work-container .education-two-container,
+  .cv-container .work-educ-container .education-container .education-two-container {
+    height: 280px;
+  }
+  .cv-container .work-educ-container .work-container .education-three-container,
+  .cv-container .work-educ-container .education-container .education-three-container {
+    height: 350px;
+  }
+  .cv-container .work-educ-container .work-container .education-four-container,
+  .cv-container .work-educ-container .education-container .education-four-container {
+    height: 440px;
+  }
+  .cv-container .cv-nav-container {
+    width: 80%;
+  }
+}/*# sourceMappingURL=cv.css.map */
