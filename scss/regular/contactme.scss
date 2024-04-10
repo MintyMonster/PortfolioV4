@@ -1,22 +1,4 @@
-$background-color: #121212;
-$highlight-color: #c992f1;
-$secondary-color: white;
-$tertiary-color: #b8b7b8;
-
-$primary-font: "Lato", sans-serif;
-
-$gradient3: rgba(0, 0, 0, 0), #663399; // Royal purple
-
-// Mixin for gradient background
-@mixin gradient-background($gradient) {
-    background: linear-gradient(to bottom, nth($gradient, 1) 7%, nth($gradient, 2));
-}
-/*
-body {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(to top, rgba(102, 51, 153, 1) 25%, rgba(102, 51, 153, 0)) !important;
-}*/
+@import '../variables';
 
 .full-contact-container {
     position: absolute;
@@ -179,61 +161,4 @@ body {
 
 .contact-success {
     border-bottom: 1px solid #32de84 !important;
-}
-
-@media only screen and (max-width: 60em) {
-
-    .full-contact-container {
-
-        width: 90vw;
-        height: 70vh;
-        margin-top: 400px;
-        top: 0;
-
-        gap: 1em !important;
-
-        .header-container {
-
-            margin-top: -50px;
-
-            .header {
-                font-size: 40px !important;
-            }
-
-            .number {
-                font-size: 20px !important;
-            }
-
-            .email {
-                font-size: 20px !important;
-            }
-        }
-
-        .header-container {
-            color: $tertiary-color;
-            font-family: $primary-font;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            flex-direction: column;
-            position: relative;
-            padding: 0;
-            gap: 2.5em;
-    
-            .header {
-                font-size: 60px;
-            }
-    
-            .number {
-                font-size: 25px;
-            }
-    
-            .email {
-                font-size: 25px;
-            }
-        }
-        
-    }
-
 }

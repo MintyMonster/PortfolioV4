@@ -1,0 +1,97 @@
+@media only screen and (max-width: 1500px) {
+  .cv-skills-container .skills-content-left-container {
+    width: 50% !important;
+  }
+  .cv-skills-container .skills-content-left-container .progress-container {
+    width: 100% !important;
+  }
+  .cv-skills-container .skills-content-left-container .progress-container .progress-bar {
+    width: 100% !important;
+  }
+  .cv-skills-container .skills-content-right-container {
+    width: 50% !important;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  body {
+    overflow: auto !important;
+    width: 100% !important;
+  }
+  .cv-container {
+    box-shadow: none;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 0;
+    height: 3500px;
+  }
+  .cv-container .cv-navbar-container .cv-nav {
+    gap: 1em !important;
+  }
+  .cv-container .cv-navbar-container .cv-nav .cv-nav-link {
+    font-size: 16px;
+  }
+  .cv-container .cv-content-container {
+    left: 0;
+  }
+  .cv-container .cv-skills-container {
+    flex-direction: column !important;
+    height: 80%;
+    gap: 2em;
+    margin-bottom: 150px;
+  }
+  .cv-container .cv-skills-container .skills-content-left-container {
+    margin-top: 350px;
+    width: 100% !important;
+    padding: unset;
+  }
+  .cv-container .cv-skills-container .skills-content-right-container {
+    width: 100% !important;
+    margin-left: 30px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .cv-employment-content-container,
+  .cv-education-content-container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%) !important;
+  }
+  .cv-employment-content-container .employment-grid-box .employment-header,
+  .cv-employment-content-container .employment-grid-box .education-header,
+  .cv-employment-content-container .education-grid-box .employment-header,
+  .cv-employment-content-container .education-grid-box .education-header,
+  .cv-education-content-container .employment-grid-box .employment-header,
+  .cv-education-content-container .employment-grid-box .education-header,
+  .cv-education-content-container .education-grid-box .employment-header,
+  .cv-education-content-container .education-grid-box .education-header {
+    height: 15% !important;
+    font-size: 12px;
+  }
+  .cv-employment-content-container .employment-grid-box .employment-date, .cv-employment-content-container .employment-grid-box .education-date,
+  .cv-employment-content-container .education-grid-box .employment-date,
+  .cv-employment-content-container .education-grid-box .education-date,
+  .cv-education-content-container .employment-grid-box .employment-date,
+  .cv-education-content-container .employment-grid-box .education-date,
+  .cv-education-content-container .education-grid-box .employment-date,
+  .cv-education-content-container .education-grid-box .education-date {
+    visibility: hidden;
+  }
+  .cv-employment-content-container .employment-grid-box .employment-description, .cv-employment-content-container .employment-grid-box .education-description,
+  .cv-employment-content-container .education-grid-box .employment-description,
+  .cv-employment-content-container .education-grid-box .education-description,
+  .cv-education-content-container .employment-grid-box .employment-description,
+  .cv-education-content-container .employment-grid-box .education-description,
+  .cv-education-content-container .education-grid-box .employment-description,
+  .cv-education-content-container .education-grid-box .education-description {
+    height: 70% !important;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .employment-description,
+  .education-description {
+    font-size: 2.5vw !important;
+  }
+  .employment-date,
+  .education-date {
+    font-size: 2vw !important;
+  }
+}/*# sourceMappingURL=cv-responsive.css.map */

@@ -5,11 +5,6 @@ $(document).ready(function () {
     const empPage = $(".cv-employment-container");
     const eduPage = $(".cv-education-container");
 
-    // BUTTONS
-    const skillsButton = $(".cv-nav-skills");
-    const empButton = $(".cv-nav-employment");
-    const eduButton = $(".cv-nav-education");
-
     // SKILLS VARIABLES
     const csharp = $(".csharp-progress-container");
     const java = $(".java-progress-container");
@@ -23,20 +18,6 @@ $(document).ready(function () {
     const cpp = $(".cplusplus-progress-container");
     const skillContainer = $(".skills-container");
     const borderContainer = $(".border-container");
-
-    // EMPLOYMENT VARIABLES
-    const emOne = $(".employment-grid-box-one");
-    const emTwo = $(".employment-grid-box-two");
-    const emThree = $(".employment-grid-box-three");
-    const emFour = $(".employment-grid-box-four");
-    const emFive = $(".employment-grid-box-five");
-    const emSix = $(".employment-grid-box-six");
-
-    // EDUCATION VARIABLES
-    const edOne = $(".education-grid-box-one");
-    const edTwo = $(".education-grid-box-two");
-    const edThree = $(".education-grid-box-three");
-    const edFour = $(".education-grid-box-four");
 
     // FUNCS
     const showSkills = () => {
@@ -73,75 +54,14 @@ $(document).ready(function () {
     }
 
 
-    const showEmployment = () => {
-        const employmentItems = [emOne, emTwo, emThree, emFour, emFive, emSix];
-        const borderContainers = [
-            ".border-container-employment-one",
-            ".border-container-employment-two",
-            ".border-container-employment-three",
-            ".border-container-employment-four"
-        ];
-
-        employmentItems.forEach((item, index) => {
-            setTimeout(() => $(item).css('opacity', 1), index * 100);
-        });
-
-        borderContainers.forEach((container, index) => {
-            setTimeout(() => $(container).css('opacity', 1), 600 + index * 250);
-        });
-    }
-
-    const showEducation = () => {
-        const educationItems = [edOne, edTwo, edThree, edFour];
-        const borderContainers = [
-            ".border-container-education-one",
-            ".border-container-education-two",
-            ".border-container-education-three",
-            ".border-container-education-four"
-        ];
-
-        educationItems.forEach((item, index) => {
-            setTimeout(() => $(item).css('opacity', 1), index * 100);
-        });
-
-        borderContainers.forEach((container, index) => {
-            setTimeout(() => $(container).css('opacity', 1), 450 + index * 250);
-        });
-    }
-
-
     // ON START 
 
     setTimeout(() => {
 
         $(skillPage).css('opacity', 1);
         setTimeout(() => showSkills(), 0);
-
+        setTimeout(() => $(empPage).css('opacity', 1), 2500);
+        setTimeout(() => $(eduPage).css('opacity', 1), 3000);
     }, 3100);
 
-    $(skillsButton).click(function () {
-
-        $(skillPage).css('opacity', 1);
-        $(empPage).css('opacity', 0);
-        $(eduPage).css('opacity', 0);
-
-        setTimeout(() => showSkills(), 100);
-
-    });
-
-    $(empButton).click(function () {
-        $(empPage).css('opacity', 1);
-        $(skillPage).css('opacity', 0);
-        $(eduPage).css('opacity', 0);
-
-        setTimeout(() => showEmployment(), 100);
-    })
-
-    $(eduButton).click(function () {
-        $(eduPage).css('opacity', 1);
-        $(skillPage).css('opacity', 0);
-        $(empPage).css('opacity', 0);
-
-        setTimeout(() => showEducation(), 100);
-    })
 });

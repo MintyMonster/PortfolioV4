@@ -1,0 +1,42 @@
+@media only screen and (max-width: 60em) {
+  .full-contact-container {
+    width: 90vw;
+    height: 70vh;
+    margin-top: 400px;
+    top: 0;
+    gap: 1em !important;
+  }
+  .full-contact-container .header-container {
+    margin-top: -50px;
+  }
+  .full-contact-container .header-container .header {
+    font-size: 40px !important;
+  }
+  .full-contact-container .header-container .number {
+    font-size: 20px !important;
+  }
+  .full-contact-container .header-container .email {
+    font-size: 20px !important;
+  }
+  .full-contact-container .header-container {
+    color: #b8b7b8;
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    gap: 2.5em;
+  }
+  .full-contact-container .header-container .header {
+    font-size: 60px;
+  }
+  .full-contact-container .header-container .number {
+    font-size: 25px;
+  }
+  .full-contact-container .header-container .email {
+    font-size: 25px;
+  }
+}/*# sourceMappingURL=contact-me-responsive.css.map */

@@ -1,0 +1,127 @@
+@import '../variables';
+
+@media only screen and (max-width: 1500px) {
+
+    .cv-skills-container {
+
+        .skills-content-left-container {
+
+            width: 50% !important;
+
+            .progress-container {
+
+                width: 100% !important;
+
+                .progress-bar {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .skills-content-right-container {
+
+
+            width: 50% !important;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    body {
+        overflow: auto !important;
+        width: 100% !important;
+    }
+
+    .cv-container {
+
+        box-shadow: none;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0;
+        height: 3500px;
+
+        .cv-navbar-container {
+
+            .cv-nav {
+                gap: 1em !important;
+
+                .cv-nav-link {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .cv-content-container {
+            // margin-left: -20px;
+            left: 0;
+        }
+
+
+
+        .cv-skills-container {
+
+            flex-direction: column !important;
+            height: 80%;
+            gap: 2em;
+            margin-bottom: 150px;
+
+            .skills-content-left-container {
+
+                margin-top: 350px;
+                width: 100% !important;
+                padding: unset;
+            }
+
+            .skills-content-right-container {
+
+                width: 100% !important;
+                margin-left: 30px;
+
+                // padding-left: 50px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .cv-employment-content-container,
+    .cv-education-content-container {
+        display: grid;
+        grid-template-columns: repeat(1, 100%) !important;
+
+        .employment-grid-box,
+        .education-grid-box {
+
+            .employment-header,
+            .education-header {
+                height: 15% !important;
+                font-size: 12px;
+            }
+
+            .employment-date, .education-date {
+                visibility: hidden;
+            }
+
+            .employment-description, .education-description {
+                height: 70% !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+    .employment-description,
+    .education-description {
+        font-size: 2.5vw !important;
+    }
+
+    .employment-date,
+    .education-date {
+        font-size: 2vw !important;
+    }
+
+}

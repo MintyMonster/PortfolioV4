@@ -1,0 +1,58 @@
+@import '../variables';
+
+@media only screen and (max-width: 60em) {
+
+    .full-contact-container {
+
+        width: 90vw;
+        height: 70vh;
+        margin-top: 400px;
+        top: 0;
+
+        gap: 1em !important;
+
+        .header-container {
+
+            margin-top: -50px;
+
+            .header {
+                font-size: 40px !important;
+            }
+
+            .number {
+                font-size: 20px !important;
+            }
+
+            .email {
+                font-size: 20px !important;
+            }
+        }
+
+        .header-container {
+            color: $tertiary-color;
+            font-family: $primary-font;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            padding: 0;
+            gap: 2.5em;
+    
+            .header {
+                font-size: 60px;
+            }
+    
+            .number {
+                font-size: 25px;
+            }
+    
+            .email {
+                font-size: 25px;
+            }
+        }
+        
+    }
+
+}

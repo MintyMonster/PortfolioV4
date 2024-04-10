@@ -13,6 +13,9 @@ define('SMTP_USERNAME', 'admin@cameronliddell.com');
 define('MAIL_ADDRESS', 'camerongliddell@gmail.com');
 define('MAIL_NAME', 'Cameron');
 
+$file_path = __DIR__ . '/../../configs/config.php';
+$config = require_once($file_path);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Collect form data
@@ -26,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $smtpHost = SMTP_SERVER;
     $smtpPort = SMTP_PORT;
     $smtpUsername = SMTP_USERNAME; // Sender email address
-    $smtpPassword = ''; // Sender email password
+    $smtpPassword = $config['email_password']; // Sender email password
 
     // Create PHPMailer object
     $mail = new PHPMailer(true);

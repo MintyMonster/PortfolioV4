@@ -96,14 +96,14 @@ $(document).ready(function () {
                             $(button).prop("disabled", true).css("opacity", 0.7);
                         }else{
                             console.error("success fail: ", response)
-                            window.location.href = "error.html"
+                            window.location.href = "https://cameronliddell.com/errors/error.html"
                         }
                     },
 
                     error: function (xhr, status, errorPost) {
 
                         console.error("Ajax error ", errorPost);
-                        window.location.href = "error.html"
+                        window.location.href = "https://cameronliddell.com/errors/error.html"
                     }
                 });
             } else {

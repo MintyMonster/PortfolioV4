@@ -1,0 +1,159 @@
+// Change grid styles
+@import '../variables';
+
+@media only screen and (min-width: 2300px) {
+    .main-content-div .projects-container {
+        grid-template-columns: repeat(5, 19%);
+    }
+}
+
+@media only screen and (max-width: 1850px) {
+    .main-content-div .projects-container {
+        grid-template-columns: repeat(3, 33%);
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .main-content-div {
+
+        .projects-container {
+            grid-template-columns: repeat(2, 50%);
+            top: 0;
+            height: 95%;
+        }
+
+        .projects-nav-container {
+            display: none;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .main-content-div {
+
+        margin-top: 20%;
+        box-shadow: none;
+        margin-bottom: 50px !important;
+
+        .projects-container {
+            grid-template-columns: repeat(1, 100%);
+
+            .projects-image-container {
+
+                .overlay {
+                    opacity: 1 !important;
+                    background-color: rgba(18, 18, 18, 0);
+
+                    .title {
+
+                        font-size: 25px;
+                        transform: translate(0, 0);
+                        display: none;
+                    }
+
+                    .learn-more-link {
+
+                        margin-bottom: 20px;
+                        width: 70%;
+                        transform: translate(0, 0);
+                        background-color: $background-color;
+                        color: $secondary-color;
+                        letter-spacing: 5px !important;
+                        border: 1px solid $highlight-color;
+
+                        top: unset;
+                        left: unset;
+                        bottom: 0;
+
+                        &::before,
+                        &::after {
+                            width: 0;
+                            height: 0;
+                        }
+
+                        &:hover {
+                            background-position: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .test-width {
+        float: none !important;
+    }
+
+    // modal stuff
+
+    .projects-modal-full {
+        width: 100% !important;
+
+        .projects-modal {
+
+            height: 75vh !important;
+
+            transform: translate(-50%, -45%);
+
+            .projects-modal-image {
+
+                display: none;
+            }
+
+            .projects-modal-content {
+                width: 100% !important;
+                max-width: 80%;
+
+                .modal-title {
+                    font-size: 40px !important;
+                    margin-top: 45px !important;
+                }
+
+                .modal-icons {
+                    font-size: 16px !important;
+                }
+
+                .modal-description {
+
+                    font-size: 13px !important;
+                    padding: 0 !important;
+                    width: 100% !important;
+                }
+
+                .modal-github {
+
+                    font-size: 25px !important;
+                    margin-bottom: -20px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+// change modal stuff
+@media only screen and (max-width: 1500px) {
+    .projects-modal-full .projects-modal {
+        height: 60%;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .projects-modal-full .projects-modal {
+        height: 40%;
+        width: 90%;
+
+        .modal-title {
+            font-size: 30px !important;
+            margin-top: 30px !important;
+        }
+
+        .modal-icons {
+            font-size: 15px !important;
+        }
+    }
+}
